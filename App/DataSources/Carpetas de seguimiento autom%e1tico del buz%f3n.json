@@ -1,0 +1,41 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "mailboxtrackingfolders",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "mailboxtrackingfolder",
+    "MaxGetRowsCount": 2000,
+    "Name": "Carpetas de seguimiento automático del buzón",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Propietario",
+      "_regardingobjectid_value": "Identificador de objeto Referente a",
+      "createdby": "Creado por",
+      "createdon": "Fecha de creación",
+      "createdonbehalfby": "Autor (delegado)",
+      "exchangefolderid": "Id. de carpeta de Exchange",
+      "exchangefoldername": "Nombre de carpeta de Exchange",
+      "folderonboardingstatus": "Carpeta en estado de integración",
+      "mailboxid": "MailboxId",
+      "mailboxtrackingfolderid": "MailboxTrackingFolderId",
+      "modifiedby": "Modificado por",
+      "modifiedon": "Fecha de modificación",
+      "modifiedonbehalfby": "Modificado por (delegado)",
+      "organizationid": "Organización",
+      "owningbusinessunit": "Unidad de negocio propietaria",
+      "owningteam": "Equipo propietario",
+      "versionnumber": "Número de versión"
+    },
+    "PreferredName": "Carpetas de seguimiento automático del buzón",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Carpetas de seguimiento automático del buzón (Views)",
+    "Name": "_mailboxtrackingfolder_views",
+    "RelatedEntityName": "Carpetas de seguimiento automático del buzón",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {}
+  }
+]

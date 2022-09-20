@@ -1,0 +1,104 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "axx_tipoapuestas",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "axx_tipoapuesta",
+    "MaxGetRowsCount": 2000,
+    "Name": "TipoApuestas",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Propietario",
+      "axx_axx_apuesta_tipoApuesta_axx_tipoapuesta": "Apuestas",
+      "axx_idtipoapuesta": "ID Tipo de Apuesta",
+      "axx_jugadorPremiado": "Jugador premiado",
+      "axx_name": "Nombre",
+      "axx_partido": "Partido",
+      "axx_puntosaotorgar": "Puntos A Otorgar",
+      "axx_seleccionPremiada": "Selección Premiada",
+      "axx_tipo": "Tipo",
+      "axx_tipoapuesta_AsyncOperations": "Trabajos del sistema",
+      "axx_tipoapuesta_BulkDeleteFailures": "Errores de eliminación en masa",
+      "axx_tipoapuesta_DuplicateBaseRecord": "Registros duplicados (axx_tipoapuesta_DuplicateBaseRecord)",
+      "axx_tipoapuesta_DuplicateMatchingRecord": "Registros duplicados (axx_tipoapuesta_DuplicateMatchingRecord)",
+      "axx_tipoapuesta_MailboxTrackingFolders": "Carpetas de seguimiento automático del buzón",
+      "axx_tipoapuesta_PrincipalObjectAttributeAccesses": "Uso compartido de campos",
+      "axx_tipoapuesta_ProcessSession": "Sesiones de proceso",
+      "axx_tipoapuesta_SyncErrors": "Errores de sincronización",
+      "axx_tipoapuestaid": "Tipo de Apuesta",
+      "createdby": "Autor",
+      "createdon": "Fecha de creación",
+      "createdonbehalfby": "Autor (delegado)",
+      "importsequencenumber": "Número de secuencia de importación",
+      "modifiedby": "Modificado por",
+      "modifiedon": "Fecha de modificación",
+      "modifiedonbehalfby": "Modificado por (delegado)",
+      "overriddencreatedon": "Fecha de creación del registro",
+      "owningbusinessunit": "Unidad de negocio propietaria",
+      "owningteam": "Equipo propietario",
+      "owninguser": "Usuario propietario",
+      "statecode": "Estado",
+      "statuscode": "Razón para el estado",
+      "timezoneruleversionnumber": "Número de versión de regla de zona horaria",
+      "utcconversiontimezonecode": "Código de zona horaria de conversión UTC",
+      "versionnumber": "Número de versión"
+    },
+    "PreferredName": "TipoApuestas",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "TipoApuestas (Views)",
+    "Name": "_axx_tipoapuesta_views",
+    "RelatedEntityName": "TipoApuestas",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2a18f07e-452a-4afb-91fa-b92b167d5136": "Vista asociada de TipoApuesta",
+      "341f9af7-207a-4e8a-a3c8-96ce91078317": "Vista de búsqueda de TipoApuesta",
+      "639c8521-3bd4-4f69-90fd-67d6bbcb0370": "TipoApuestas inactivo",
+      "ba87fd81-dde4-4c2e-a5d6-a4ef343a92d7": "Vista de búsqueda avanzada de TipoApuesta",
+      "e45d9d34-b3e8-46bf-8456-163df3a50f15": "Tipo de Apuestas"
+    }
+  },
+  {
+    "DisplayName": "Estado (TipoApuestas)",
+    "Name": "axx_tipoapuesta_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Activo",
+      "1": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "TipoApuestas"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "TipoApuestas",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Razón para el estado (TipoApuestas)",
+    "Name": "axx_tipoapuesta_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Activo",
+      "2": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "TipoApuestas"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "TipoApuestas",
+    "Type": "OptionSetInfo"
+  }
+]

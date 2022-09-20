@@ -1,0 +1,771 @@
+"Home As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Fill: =RGBA(235, 236, 240, 1)
+
+    Canvas4 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =1035
+        Width: =Parent.Width
+        Y: =101
+        ZIndex: =3
+
+        DataCard3 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =285
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Label5_3 As label:
+                Align: =Center
+                FontWeight: =Semibold
+                Height: =70
+                Size: =21
+                Text: =$"Saludos {User().FullName}!"
+                Width: =515
+                X: =62
+                Y: =122
+                ZIndex: =1
+
+            Label1_12 As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =70
+                Size: =26
+                Text: ="PARTIDOS DEL DÍA"
+                Width: =640
+                Y: =202
+                ZIndex: =4
+
+        DataCard1 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =PartidosPorGrupo_2.Height
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            "PartidosPorGrupo_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                Height: =CountRows(PartidosPorGrupo_2.AllItems)*PartidosPorGrupo_2.TemplateHeight + CountRows(PartidosPorGrupo_2.AllItems)*PartidosPorGrupo_2.TemplatePadding
+                Items: |-
+                    =Filter(Partidos,Day('Fecha y hora')= Day(Now()), Month('Fecha y hora') = Month(Now()))
+                        
+                Layout: =Layout.Vertical
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =324
+                Transition: =Transition.Pop
+                ZIndex: =2
+
+                matchToggle_2 As toggleSwitch:
+                    Default: =Value(resLocalAp_2.Text) <> LookUp(Apuestas_1, Partido.'ID Partido' = ThisItem.'ID Partido', 'Resultado 90 Local') Or Value(resVisitanteAp_2.Text) <> LookUp(Apuestas_1, Partido.'ID Partido' = ThisItem.'ID Partido', 'Resultado 90 Visitante')
+                    Height: =49
+                    Size: =21
+                    Visible: =false
+                    Width: =154
+                    X: =60
+                    Y: =60
+                    ZIndex: =1
+
+                Button4_6 As button:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    Color: =RGBA(47, 47, 61, 1)
+                    DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =295
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    OnSelect: |-
+                        =Set(NavScreen, Fixture);
+                        Navigate(TitularesYResultados)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =40
+                    RadiusBottomRight: =40
+                    RadiusTopLeft: =40
+                    RadiusTopRight: =40
+                    Size: =24
+                    Text: =""
+                    Width: =568
+                    X: =34
+                    ZIndex: =2
+
+                label_eqLocal_2 As label:
+                    Align: =Center
+                    DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                    Height: =60
+                    OnSelect: |-
+                        =Set(NavScreen, Fixture);
+                        Navigate(TitularesYResultados)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =16
+                    Text: =Upper(ThisItem.'Equipo Local'.' País/Nombre')
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =163
+                    X: =34
+                    Y: =190
+                    ZIndex: =3
+
+                label_eqVisitante_2 As label:
+                    Align: =Center
+                    DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                    Height: =60
+                    OnSelect: |-
+                        =Set(NavScreen, Fixture);
+                        Navigate(TitularesYResultados)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =16
+                    Text: =Upper(ThisItem.'Equipo Visitante'.' País/Nombre')
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =163
+                    X: =439
+                    Y: =label_eqLocal_2.Y
+                    ZIndex: =4
+
+                label_fechaHora_2 As label:
+                    Color: =RGBA(84, 84, 84, 1)
+                    DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                    Height: =37
+                    OnSelect: |-
+                        =Set(NavScreen, Fixture);
+                        Navigate(TitularesYResultados)
+                    Size: =16
+                    Text: |-
+                        =$"{Hour(ThisItem.'Fecha y hora')}:{Minute(ThisItem.'Fecha y hora')}0HS"
+                    Visible: =IsBlank(ThisItem.'Resultado 90 Local')
+                    Width: =140
+                    X: =46
+                    Y: =251
+                    ZIndex: =5
+
+                label_idPartido_2 As label:
+                    Color: =RGBA(84, 84, 84, 1)
+                    DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                    FontWeight: =FontWeight.Lighter
+                    Height: =34
+                    Italic: =true
+                    OnSelect: |-
+                        =Set(NavScreen, Fixture);
+                        Navigate(TitularesYResultados)
+                    Size: =16
+                    Text: =$"Partido N° {ThisItem.'ID Partido'}"
+                    Width: =140
+                    X: =38
+                    Y: =10
+                    ZIndex: =7
+
+                emi_estadio_2 As label:
+                    Align: =Align.Right
+                    Color: =RGBA(84, 84, 84, 1)
+                    DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                    FontWeight: =FontWeight.Lighter
+                    Height: =52
+                    OnSelect: |-
+                        =Set(NavScreen, Fixture);
+                        Navigate(TitularesYResultados)
+                    Size: =18
+                    Text: =ThisItem.Emisora & " / " & ThisItem.Estadio
+                    Visible: =!(IsBlank(ThisItem.Emisora) && IsBlank(ThisItem.Estadio))
+                    Width: =441
+                    X: =131
+                    Y: =236
+                    ZIndex: =8
+
+                label_Dia_2 As datepicker:
+                    Color: =RGBA(84, 84, 84, 1)
+                    DefaultDate: =ThisItem.'Fecha y hora'
+                    DisplayMode: =DisplayMode.View
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Format: =DateTimeFormat.LongDate
+                    Height: =48
+                    Italic: =true
+                    Language: ='es-ES'
+                    OnSelect: =
+                    Size: =16
+                    Width: =360
+                    X: =233
+                    Y: =3
+                    ZIndex: =13
+
+                resVisitanteAp_2 As text:
+                    Align: =Center
+                    BorderColor: =RGBA(204, 204, 204, 1)
+                    Default: |-
+                        =LookUp(
+                            Apuestas_1,
+                            Partido.'Partido ' = ThisItem.'Partido ' && 
+                            Usuario.'Correo electrónico principal' = User().Email,
+                            'Resultado 90 Visitante'
+                        )
+                    DisplayMode: =resLocalAp_2.DisplayMode
+                    Fill: =RGBA(204, 204, 204, 1)
+                    FontWeight: =FontWeight.Bold
+                    Format: =TextFormat.Number
+                    Height: =64
+                    HintText: =LookUp(Apuestas_1,Partido.'Partido ' = ThisItem.'Partido ' && Usuario.'Correo electrónico principal' = User().Email, 'Resultado 90 Visitante')
+                    MaxLength: =2
+                    OnChange: =If(IsBlank(resVisitanteAp_2.Text), Notify("Olvidaste llenar el resultado Visitante"))
+                    OnSelect: |-
+                        =Set(
+                            hayCambioApuesta,
+                            true
+                        );
+                    PaddingLeft: =5
+                    Size: =32
+                    Visible: =resLocalAp_2.Visible
+                    Width: =70
+                    X: =350
+                    Y: =resLocalAp_2.Y
+                    ZIndex: =14
+
+                resLocalAp_2 As text:
+                    Align: =Center
+                    BorderColor: =RGBA(204, 204, 204, 1)
+                    Default: |-
+                        =LookUp(
+                            Apuestas_1,
+                            Partido.'Partido ' = ThisItem.'Partido ' && 
+                            Usuario.'Correo electrónico principal' = User().Email,
+                            'Resultado 90 Local'
+                        )
+                    DisabledColor: =RGBA(179, 179, 179, 1)
+                    DisplayMode: |-
+                        =If(IsBlankOrError(label_eqLocal_2.Text) || LookUp(
+                            Partidos,
+                            'ID Partido' = ThisItem.'ID Partido',
+                            'Detalles del estado'
+                        ) = 'Detalles del estado (Partidos)'.'Apuesta cerrada', DisplayMode.Disabled, DisplayMode.Edit)
+                    Fill: =RGBA(204, 204, 204, 1)
+                    FontWeight: =FontWeight.Bold
+                    Format: =TextFormat.Number
+                    Height: =64
+                    HintText: =LookUp(Apuestas_1,Partido.'Partido ' = ThisItem.'Partido '&& Usuario.'Correo electrónico principal' = User().Email, 'Resultado 90 Local')
+                    MaxLength: =2
+                    OnChange: =If(IsBlank(resLocalAp_2.Text), Notify("Olvidaste llenar el resultado Local", 3000))
+                    OnSelect: |-
+                        =Set(
+                            hayCambioApuesta,
+                            true
+                        );
+                    PaddingLeft: =5
+                    Size: =32
+                    Visible: |-
+                        =LookUp(
+                            Partidos,
+                            'ID Partido' = ThisItem.'ID Partido',
+                            'Detalles del estado'
+                        ) <> 'Detalles del estado (Partidos)'.Inactivo
+                        
+                        
+                        //Day(ThisItem.'Fecha y hora') > Day(Now())
+                    Width: =70
+                    X: =216
+                    Y: =107 
+                    ZIndex: =15
+
+                BotonApostar_2 As button:
+                    DisplayMode: =If(!(IsBlank(resLocalAp_2) || IsBlank(resVisitanteAp_2)), DisplayMode.Edit, DisplayMode.Disabled)
+                    Height: =55
+                    OnSelect: =SubmitForm(FormApuesta); ResetForm(FormApuesta); Set(hayCambioApuesta, false)
+                    Size: =16
+                    Text: |-
+                        =If(
+                            IsBlank(
+                                LookUp(Apuestas_1,Partido.'ID Partido' = ThisItem.'ID Partido' && Usuario.'Correo electrónico principal' = User().Email, 'Resultado 90 Visitante')
+                            ),
+                            "Apuesta",
+                            "Guardar"
+                        )
+                    Visible: |-
+                        =hayCambioApuesta && ThisItem.IsSelected && (LookUp(
+                            Apuestas_1,
+                            Partido.'ID Partido' = ThisItem.'ID Partido' && 
+                            Usuario.'Correo electrónico principal' = User().Email,
+                            'Resultado 90 Local'
+                        ) <> Value(resLocalAp_2.Text) Or LookUp(
+                            Apuestas_1,
+                            Partido.'ID Partido' = ThisItem.'ID Partido' && 
+                            Usuario.'Correo electrónico principal' = User().Email,
+                            'Resultado 90 Visitante'
+                        ) <> Value(resVisitanteAp_2.Text))
+                    Width: =121
+                    X: =266
+                    Y: =184
+                    ZIndex: =16
+
+                img_Visitante_2 As image:
+                    BorderColor: =RGBA(84, 84, 84, 1)
+                    BorderThickness: =3
+                    DisplayMode: =If(IsBlankOrError(label_eqVisitante_2.Text), DisplayMode.Disabled, DisplayMode.Edit)
+                    Height: =75
+                    Image: =ThisItem.'Equipo Visitante'.Bandera
+                    OnSelect: |-
+                        =Set(_paisSeleccionado, ThisItem.'Equipo Visitante');
+                        Navigate(Equipo)
+                    RadiusBottomLeft: =img_Visitante_2.Height
+                    RadiusBottomRight: =img_Visitante_2.Height
+                    RadiusTopLeft: =img_Visitante_2.Height
+                    RadiusTopRight: =img_Visitante_2.Height
+                    Width: =75
+                    X: =485
+                    Y: =95
+                    ZIndex: =17
+
+                img_Local_2 As image:
+                    BorderColor: =RGBA(84, 84, 84, 1)
+                    BorderThickness: =3
+                    DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.Disabled, DisplayMode.Edit)
+                    Height: =75
+                    Image: =ThisItem.'Equipo Local'.Bandera
+                    OnSelect: |-
+                        =Set(_paisSeleccionado, ThisItem.'Equipo Local');
+                        Set(NavScreen, Fixture);
+                        Navigate(Equipo)
+                    RadiusBottomLeft: =img_Local_2.Height
+                    RadiusBottomRight: =img_Local_2.Height
+                    RadiusTopLeft: =img_Local_2.Height
+                    RadiusTopRight: =img_Local_2.Height
+                    Width: =75
+                    X: =80
+                    Y: =95
+                    ZIndex: =18
+
+                Label8 As label:
+                    Align: =Center
+                    Color: =RGBA(116, 116, 116, 1)
+                    Height: =47
+                    Size: =16
+                    Text: =Upper(ThisItem.Fase)
+                    Width: =165
+                    X: =237
+                    Y: =52
+                    ZIndex: =29
+
+                Group3_2 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =29
+
+                    Icon2_6 As icon.HorizontalLine:
+                        Color: =RGBA(128, 128, 128, 1)
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        Height: =73
+                        Icon: =Icon.HorizontalLine
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Tooltip: |-
+                            =$"Tu Apuesta: {apLocal_2.Text} - {apVisitante_2.Text}"
+                        Width: =23
+                        X: =306
+                        Y: =resLocal_2.Y
+                        ZIndex: =6
+
+                    resLocal_2 As label:
+                        Align: =Center
+                        AutoHeight: =true
+                        Color: =RGBA(84, 84, 84, 1)
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Bold
+                        Height: =53
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =32
+                        Text: =ThisItem.'Resultado 90 Local'
+                        Tooltip: ="Resultado Local"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =55
+                        X: =228
+                        Y: =104 - If(!IsBlank(ThisItem.'Resultado Alargue Local'), 25, 0)
+                        ZIndex: =9
+
+                    resVisitante_2 As label:
+                        Align: =Center
+                        AutoHeight: =true
+                        Color: =RGBA(84, 84, 84, 1)
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Bold
+                        Height: =46
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =32
+                        Text: =ThisItem.'Resultado 90 Visitante'
+                        Tooltip: ="Resultado Visitante"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =55
+                        X: =351
+                        Y: =resLocal_2.Y
+                        ZIndex: =10
+
+                    apLocal_2 As label:
+                        Align: =Center
+                        Color: =If(IsBlank(resLocal_2.Text), RGBA(84, 84, 84, 1), If(Value(apLocal_2.Text) = Value(resLocal_2.Text) && Value(apVisitante_2.Text) = Value(resVisitante_2.Text), MediumSeaGreen, If((Value(apLocal_2.Text) >= Value(apVisitante_2.Text) && Value(resLocal_2.Text) >= Value(resVisitante_2.Text)) || (Value(apLocal_2.Text) <= Value(apVisitante_2.Text) && Value(resLocal_2.Text) <= Value(resVisitante_2.Text)), RGBA(235, 200, 35, 95), IndianRed)))
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =41
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =21
+                        Text: =LookUp(Apuestas_1,Partido.'Partido ' = ThisItem.'Partido ' && Usuario.'Correo electrónico principal' = User().Email, 'Resultado 90 Local')
+                        Tooltip: ="Tu Apuesta a Resultado Local"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =51
+                        X: =186
+                        Y: =resLocal_2.Y + 14
+                        ZIndex: =11
+
+                    apVisitante_2 As label:
+                        Align: =Center
+                        Color: =apLocal_2.Color
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =41
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =21
+                        Text: =LookUp(Apuestas_1,Partido.'Partido ' = ThisItem.'Partido ' && Usuario.'Correo electrónico principal' = User().Email, 'Resultado 90 Visitante')
+                        Tooltip: ="Tu Apuesta a Resultado Visitante"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =51
+                        X: =396
+                        Y: =apLocal_2.Y
+                        ZIndex: =12
+
+                    label_noHayAp_1 As label:
+                        Align: =Center
+                        DisplayMode: =DisplayMode.View
+                        Height: =60
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: ="UY! NO HAY APUESTA!"
+                        VerticalAlign: =VerticalAlign.Top
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =163
+                        X: =237
+                        Y: =171
+                        ZIndex: =19
+
+                    label_alargPenales_1 As label:
+                        Align: =Center
+                        Color: =RGBA(84, 84, 84, 1)
+                        DisplayMode: =DisplayMode.View
+                        Height: =81
+                        LineHeight: =1.8
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =16
+                        Text: |-
+                            ="Alargue
+                            Penales"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =100
+                        X: =268
+                        Y: =resLocal_Al_1.Y
+                        ZIndex: =20
+
+                    apLocal_Al_1 As label:
+                        Align: =Center
+                        Color: =If(IsBlank(resLocal_Al_1.Text),RGBA(84,84,84,1),If(Value(apLocal_Al_1.Text)=Value(resLocal_Al_1.Text)&&Value(apVisitante_Al_1.Text)=Value(resVisitante_Al_1.Text),MediumSeaGreen,If((Value(apLocal_Al_1.Text)>Value(apVisitante_Al_1.Text)&&Value(resLocal_Al_1.Text)>Value(resVisitante_Al_1.Text))||(Value(apLocal_Al_1.Text)<Value(apVisitante_Al_1.Text)&&Value(resLocal_Al_1.Text)<Value(resVisitante_Al_1.Text))||(Value(apLocal_Al_1.Text)=Value(apVisitante_Al_1.Text)&&Value(resLocal_Al_1.Text)=Value(resVisitante_Al_1.Text)),RGBA(235,200,35,95),IndianRed)))
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =21
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =21
+                        Text: =LookUp(Apuestas_1,Partido.'Partido ' = ThisItem.'Partido ' && Usuario.'Correo electrónico principal' = User().Email, 'Resultado Alargue Local')
+                        Tooltip: ="Tu Apuesta a Resultado Alargue Local"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =51
+                        X: =186
+                        Y: =resLocal_Al_1.Y + 14
+                        ZIndex: =21
+
+                    apVisitante_Al_1 As label:
+                        Align: =Center
+                        Color: =apLocal_Al_1.Color
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =21
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =21
+                        Text: =LookUp(Apuestas_1,Partido.'Partido ' = ThisItem.'Partido ' && Usuario.'Correo electrónico principal' = User().Email, 'Resultado Alargue Visitante')
+                        Tooltip: ="Tu Apuesta a Resultado Alargue Visitante"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =51
+                        X: =396
+                        Y: =apLocal_Al_1.Y
+                        ZIndex: =22
+
+                    resLocal_Al_1 As label:
+                        Align: =Center
+                        Color: =RGBA(84, 84, 84, 1)
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Bold
+                        Height: =45
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =24
+                        Text: =ThisItem.'Resultado Alargue Local'
+                        Tooltip: ="Resultado Local"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =49
+                        X: =228
+                        Y: =resLocal_2.Y + 56
+                        ZIndex: =23
+
+                    resVisitante_Al_1 As label:
+                        Align: =Center
+                        Color: =RGBA(84, 84, 84, 1)
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Bold
+                        Height: =44
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =24
+                        Text: =ThisItem.'Resultado Alargue Visitante'
+                        Tooltip: ="Resultado Visitante"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =46
+                        X: =358
+                        Y: =resLocal_Al_1.Y
+                        ZIndex: =24
+
+                    resLocal_Pe_1 As label:
+                        Align: =Center
+                        Color: =RGBA(84, 84, 84, 1)
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Bold
+                        Height: =45
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =24
+                        Text: =ThisItem.'Resultado Penales Local'
+                        Tooltip: ="Resultado Local"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =49
+                        X: =228
+                        Y: =resLocal_Al_1.Y + 38
+                        ZIndex: =25
+
+                    resVisitante_Pe_1 As label:
+                        Align: =Center
+                        Color: =RGBA(84, 84, 84, 1)
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Bold
+                        Height: =44
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =24
+                        Text: =ThisItem.'Resultado Penales Visitante'
+                        Tooltip: ="Resultado Visitante"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =46
+                        X: =358
+                        Y: =resLocal_Pe_1.Y
+                        ZIndex: =26
+
+                    apLocal_Pe_1 As label:
+                        Align: =Center
+                        Color: =If(IsBlank(resLocal_Pe_1.Text), RGBA(84, 84, 84, 1), If(Value(apLocal_Pe_1.Text) = Value(resLocal_Pe_1.Text) && Value(apVisitante_Pe_1.Text) = Value(resVisitante_Pe_1.Text), MediumSeaGreen, If((Value(apLocal_Pe_1.Text) >= Value(apVisitante_Pe_1.Text) && Value(resLocal_Pe_1.Text) >= Value(resVisitante_Pe_1.Text)) || (Value(apLocal_Pe_1.Text) <= Value(apVisitante_Pe_1.Text) && Value(resLocal_Pe_1.Text) <= Value(resVisitante_Pe_1.Text)), RGBA(235, 200, 35, 95), IndianRed)))
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =21
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =21
+                        Text: =LookUp(Apuestas_1,Partido.'Partido ' = ThisItem.'Partido ' && Usuario.'Correo electrónico principal' = User().Email, 'Resultado Penales Local')
+                        Tooltip: ="Tu Apuesta a Resultado Penales Local"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =51
+                        X: =186
+                        Y: =resLocal_Pe_1.Y + 13
+                        ZIndex: =27
+
+                    apVisitante_Pe_1 As label:
+                        Align: =Center
+                        Color: =apLocal_Pe_1.Color
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal_2.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =21
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados)
+                        Size: =21
+                        Text: =LookUp(Apuestas_1,Partido.'Partido ' = ThisItem.'Partido ' && Usuario.'Correo electrónico principal' = User().Email, 'Resultado Penales Visitante')
+                        Tooltip: ="Tu Apuesta a Resultado Penales Visitante"
+                        Visible: =!resLocalAp_2.Visible
+                        Width: =51
+                        X: =396
+                        Y: =apLocal_Pe_1.Y
+                        ZIndex: =28
+
+        DataCard4 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =If(CountRows(PartidosPorGrupo_2.AllItems) = 0, 100, 0)
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =3
+
+            Label2 As label:
+                Align: =Align.Center
+                Height: =97
+                Size: =21
+                Text: ="No hay Partidos el dia de hoy. Puede fijarse en el Fixture"
+                Visible: =CountRows(PartidosPorGrupo_2.AllItems) = 0
+                Width: =640
+                ZIndex: =2
+
+        DataCard6 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =4
+
+            Button1 As button:
+                Height: =70
+                OnSelect: =Navigate(Fixture)
+                Size: =24
+                Text: ="FIXTURE"
+                Width: =280
+                X: =180
+                Y: =16
+                ZIndex: =1
+
+        goleadores As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =745
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =5
+
+            "Gallery6 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                Height: =547
+                Items: =FirstN(Sort(Planteles, 'Goles acumulados', Descending),10)
+                Layout: =Layout.Vertical
+                TemplatePadding: =0
+                TemplateSize: =55
+                Y: =150
+                ZIndex: =1
+
+                Title6 As label:
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.Nombre & " " &ThisItem.Apellido
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Parent.Width
+                    X: =
+                    Y: =6
+                    ZIndex: =2
+
+                Separator6 As rectangle:
+                    Height: =0
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - 1
+                    ZIndex: =5
+
+            Label9 As label:
+                Align: =Align.Center
+                Height: =70
+                Size: =21
+                Text: ="TABLA DE GOLEADORES"
+                Width: =560
+                X: =40
+                Y: =40
+                ZIndex: =2
+
+    NavBar_10 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =9
+
+        Container1_12 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(235, 236, 240, 1)
+            Height: =100
+            Width: =640
+            ZIndex: =4
+
+        Container2_9 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =1
+            Width: =640
+            Y: =100
+            ZIndex: =7
+
+    Icon1_28 As icon.Hamburger:
+        Color: =RGBA(30, 75, 239, 1)
+        Height: =70
+        Icon: =Icon.Hamburger
+        OnSelect: |-
+            =Navigate(Menu, ScreenTransition.Cover);
+            Set(NavScreen, Fixture)
+        Width: =50
+        X: =556
+        Y: =20
+        ZIndex: =10
+
+    Image1_29 As image:
+        Height: =60
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Stretch
+        OnSelect: =Navigate(PerfilUsuario)
+        RadiusBottomLeft: =70
+        RadiusBottomRight: =70
+        RadiusTopLeft: =70
+        RadiusTopRight: =70
+        Width: =60
+        X: =477
+        Y: =20
+        ZIndex: =11
+

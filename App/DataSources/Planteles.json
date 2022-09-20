@@ -1,0 +1,140 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "axx_plantels",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "axx_plantel",
+    "MaxGetRowsCount": 2000,
+    "Name": "Planteles",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "{Attachments}": "Attachments",
+      "axx_altura": "Altura",
+      "axx_apellido": "Apellido",
+      "axx_asistenciasacumuladas": "Asistencias acumuladas",
+      "axx_asistenciasacumuladas_date": "Asistencias acumuladas (fecha de última actualización)",
+      "axx_asistenciasacumuladas_state": "Asistencias acumuladas (estado)",
+      "axx_axx_apuesta_jugador_axx_plantel": "Apuestas",
+      "axx_axx_formacionpartido_Integrantes_axx_plan": "FormaciónPartidos",
+      "axx_axx_tipoapuesta_jugadorPremiado_axx_plant": "TipoApuestas",
+      "axx_camiseta": "Camiseta",
+      "axx_club": "Club",
+      "axx_edad": "Edad",
+      "axx_equipo": "Equipo",
+      "axx_golesacumulados": "Goles acumulados",
+      "axx_golesacumulados_date": "Goles acumulados (fecha de última actualización)",
+      "axx_golesacumulados_state": "Goles acumulados (estado)",
+      "axx_idintegrante": "ID Integrante",
+      "axx_name": "Nombre completo",
+      "axx_nombre": "Nombre",
+      "axx_numeroposicion": "Número de posición jugador",
+      "axx_partidosjugados": "Partidos Jugados",
+      "axx_partidosjugados_date": "Partidos Jugados (fecha de última actualización)",
+      "axx_partidosjugados_state": "Partidos Jugados (estado)",
+      "axx_piernahabil": "Pierna Hábil",
+      "axx_plantel_Annotations": "Notas",
+      "axx_plantel_AsyncOperations": "Trabajos del sistema",
+      "axx_plantel_BulkDeleteFailures": "Errores de eliminación en masa",
+      "axx_plantel_DuplicateBaseRecord": "Registros duplicados (axx_plantel_DuplicateBaseRecord)",
+      "axx_plantel_DuplicateMatchingRecord": "Registros duplicados (axx_plantel_DuplicateMatchingRecord)",
+      "axx_plantel_MailboxTrackingFolders": "Carpetas de seguimiento automático del buzón",
+      "axx_plantel_PrincipalObjectAttributeAccesses": "Uso compartido de campos",
+      "axx_plantel_ProcessSession": "Sesiones de proceso",
+      "axx_plantel_SyncErrors": "Errores de sincronización",
+      "axx_plantelid": "Plantel GUID",
+      "axx_posicion": "Posicion",
+      "axx_tipointegrante": "Tipo de Integrante",
+      "createdby": "Autor",
+      "createdon": "Fecha de creación",
+      "createdonbehalfby": "Autor (delegado)",
+      "importsequencenumber": "Número de secuencia de importación",
+      "modifiedby": "Modificado por",
+      "modifiedon": "Fecha de modificación",
+      "modifiedonbehalfby": "Modificado por (delegado)",
+      "organizationid": "Id. de la organización",
+      "overriddencreatedon": "Fecha de creación del registro",
+      "statecode": "Estado",
+      "statuscode": "Razón para el estado",
+      "timezoneruleversionnumber": "Número de versión de regla de zona horaria",
+      "utcconversiontimezonecode": "Código de zona horaria de conversión UTC",
+      "versionnumber": "Número de versión"
+    },
+    "PreferredName": "Planteles",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Planteles (Views)",
+    "Name": "_axx_plantel_views",
+    "RelatedEntityName": "Planteles",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5c7d9beb-4b83-4b09-9c03-dacb16c6dfdf": "Vista asociada de Plantel",
+      "74bf2a73-0345-47ac-ad6a-603479896ef8": "Planteles inactivo",
+      "b228169d-8dea-421f-a5e7-914c74087913": "Vista de búsqueda avanzada de Plantel",
+      "d46a8d57-30cd-47fd-a2d1-fda617c47413": "Vista de búsqueda de Plantel",
+      "f92af3c6-90b2-42b3-9d7f-2cd45d0d4376": "Jugadores"
+    }
+  },
+  {
+    "DisplayName": "Estado (Planteles)",
+    "Name": "axx_plantel_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Activo",
+      "1": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Planteles"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Planteles",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Razón para el estado (Planteles)",
+    "Name": "axx_plantel_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Activo",
+      "2": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Planteles"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Planteles",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Tipo de Integrante Choice",
+    "Name": "axx_tipointegrante",
+    "OptionSetInfoNameMapping": {
+      "752810000": "Jugador",
+      "752810001": "DT"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "axx_tipointegrante",
+        "OptionSetReferenceEntityName": "Planteles"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "axx_tipointegrante",
+    "RelatedEntityName": "Planteles",
+    "Type": "OptionSetInfo"
+  }
+]

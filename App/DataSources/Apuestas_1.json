@@ -1,0 +1,124 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "axx_apuestas",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "axx_apuesta",
+    "MaxGetRowsCount": 2000,
+    "Name": "Apuestas_1",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Propietario",
+      "axx_apuesta_AsyncOperations": "Trabajos del sistema",
+      "axx_apuesta_BulkDeleteFailures": "Errores de eliminación en masa",
+      "axx_apuesta_DuplicateBaseRecord": "Registros duplicados (axx_apuesta_DuplicateBaseRecord)",
+      "axx_apuesta_DuplicateMatchingRecord": "Registros duplicados (axx_apuesta_DuplicateMatchingRecord)",
+      "axx_apuesta_MailboxTrackingFolders": "Carpetas de seguimiento automático del buzón",
+      "axx_apuesta_PrincipalObjectAttributeAccesses": "Uso compartido de campos",
+      "axx_apuesta_ProcessSession": "Sesiones de proceso",
+      "axx_apuesta_SyncErrors": "Errores de sincronización",
+      "axx_apuestadelusuario": "Apuesta del Usuario",
+      "axx_apuestaid": "Apuesta GUID",
+      "axx_equipo": "Equipo",
+      "axx_idapuesta": "ID Apuesta",
+      "axx_jugador": "Jugador",
+      "axx_name": "Nombre de Apuesta",
+      "axx_partido": "Partido",
+      "axx_puntosaotorgar": "Puntos a otorgar",
+      "axx_puntoslogrados": "Puntos Logrados",
+      "axx_puntosprueba": "Puntos prueba",
+      "axx_puntosprueba_date": "Puntos prueba (fecha de última actualización)",
+      "axx_puntosprueba_state": "Puntos prueba (estado)",
+      "axx_resultado90local": "Resultado 90 Local",
+      "axx_resultado90visitante": "Resultado 90 Visitante",
+      "axx_resultadoalarguelocal": "Resultado Alargue Local",
+      "axx_resultadoalarguevisitante": "Resultado Alargue Visitante",
+      "axx_resultadopenaleslocal": "Resultado Penales Local",
+      "axx_resultadopenalesvisitante": "Resultado Penales Visitante",
+      "axx_seleccion": "Seleccion",
+      "axx_tipoApuesta": "Tipo de Apuesta",
+      "createdby": "Usuario",
+      "createdon": "Fecha de creación",
+      "createdonbehalfby": "Autor (delegado)",
+      "importsequencenumber": "Número de secuencia de importación",
+      "modifiedby": "Modificado por",
+      "modifiedon": "Fecha de modificación",
+      "modifiedonbehalfby": "Modificado por (delegado)",
+      "overriddencreatedon": "Fecha de creación del registro",
+      "owningbusinessunit": "Unidad de negocio propietaria",
+      "owningteam": "Equipo propietario",
+      "owninguser": "Usuario propietario",
+      "statecode": "Estado de la apuesta",
+      "statuscode": "Razón para el estado",
+      "timezoneruleversionnumber": "Número de versión de regla de zona horaria",
+      "utcconversiontimezonecode": "Código de zona horaria de conversión UTC",
+      "versionnumber": "Número de versión"
+    },
+    "PreferredName": "Apuestas_1",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Apuestas_1 (Views)",
+    "Name": "_axx_apuesta_views",
+    "RelatedEntityName": "Apuestas_1",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "012edae6-da35-ed11-9db1-000d3ac1868a": "Apuestas por usuario - General",
+      "0dc4a457-675b-4c48-9918-ac0c9e9d552b": "Vista asociada de Apuesta",
+      "174ea754-f41f-ed11-b83d-000d3ac14d70": "Apuestas Goleador",
+      "4876b605-8a2f-ed11-9db0-000d3ac1868a": "Apuesta Tercer Puesto",
+      "538fe708-3634-ed11-9db1-000d3ac19ac8": "Apuesta Campeón",
+      "6a914e06-3e34-ed11-9db1-000d3ac19ac8": "Apuestas Asistencias",
+      "73e20ca7-7900-4189-9a6a-73846a718714": "Vista de búsqueda de Apuesta",
+      "79e6fe46-202d-ed11-9db0-000d3ac19ac8": "Apuestas Cerradas",
+      "82ba9f01-4db3-4a14-a924-e4b77b266d91": "Apuesta Fase Eliminatoria",
+      "ac75ea50-ef1f-ed11-b83d-000d3ac14d70": "Apuesta Fase de grupo",
+      "be5bf09a-3634-ed11-9db1-000d3ac1868a": "Apuesta Subcampeón",
+      "c5d89a64-bfa4-429c-8472-5a9ea23887b7": "Vista de búsqueda avanzada de Apuesta",
+      "d73ad876-252d-ed11-9db0-000d3ac1868a": "Apuestas Abiertas",
+      "f077e341-3734-ed11-9db1-000d3ac1868a": "Apuestas Valla menos vencida"
+    }
+  },
+  {
+    "DisplayName": "Estado de la apuesta (Apuestas_1)",
+    "Name": "axx_apuesta_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Activo",
+      "1": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Apuestas_1"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Apuestas_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Razón para el estado (Apuestas_1)",
+    "Name": "axx_apuesta_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Activo",
+      "2": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Apuestas_1"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Apuestas_1",
+    "Type": "OptionSetInfo"
+  }
+]

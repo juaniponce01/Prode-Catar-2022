@@ -1,0 +1,856 @@
+"TitularesYResultados_1 As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    Icon11_17 As icon.Home:
+        Color: =RGBA(30, 75, 239, 1)
+        Height: =60
+        Icon: =Icon.Home
+        OnSelect: =Navigate(Home)
+        Width: =60
+        X: =477
+        Y: =20
+        ZIndex: =8
+
+    NavBar_25 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =8
+
+        Container1_24 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(235, 236, 240, 1)
+            Height: =100
+            Width: =640
+            ZIndex: =4
+
+            Image1_31 As image:
+                Height: =60
+                Image: =User().Image
+                ImagePosition: =ImagePosition.Stretch
+                OnSelect: =Navigate(PerfilUsuario)
+                RadiusBottomLeft: =70
+                RadiusBottomRight: =70
+                RadiusTopLeft: =70
+                RadiusTopRight: =70
+                Width: =60
+                X: =84
+                Y: =20
+                ZIndex: =1
+
+        Icon1_30 As icon.Hamburger:
+            Color: =RGBA(30, 75, 239, 1)
+            Height: =70
+            Icon: =Icon.Hamburger
+            OnSelect: |-
+                =Navigate(Menu, ScreenTransition.Cover);
+                Set(NavScreen, Fixture)
+            Width: =50
+            X: =556
+            Y: =20
+            ZIndex: =5
+
+        Container2_25 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =1
+            Width: =640
+            Y: =100
+            ZIndex: =6
+
+        Icon_back_26 As icon.ChevronLeft:
+            Color: =RGBA(30, 75, 239, 1)
+            Height: =50
+            Icon: =Icon.ChevronLeft
+            OnSelect: =If(NavScreen = Home, Back(), Navigate(NavScreen))
+            Width: =50
+            X: =21
+            Y: =25
+            ZIndex: =7
+
+    Canvas8_3 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Fill: =RGBA(235, 236, 240, 1)
+        Height: =1035
+        Width: =Parent.Width
+        Y: =101
+        ZIndex: =9
+
+        ResultadosDePartido_3 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1016
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            TituloApartado_3 As label:
+                Align: =Align.Center
+                Color: =RGBA(116, 116, 116, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =110
+                Size: =24
+                Text: ="INFORMACIÓN DE PARTIDO"
+                Width: =640
+                Y: =7
+                ZIndex: =1
+
+            Container1_3 As groupContainer.manualLayoutContainer:
+                Height: =878
+                Width: =640
+                Y: =117
+                ZIndex: =2
+
+                Button1_4 As button:
+                    BorderThickness: =1
+                    DisabledFill: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =878
+                    RadiusTopLeft: |
+                        =
+                    RadiusTopRight: |
+                        =
+                    Size: =24
+                    Text: =""
+                    Width: =625
+                    X: =15
+                    ZIndex: =1
+
+                SubtituloPosesión_3 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =52
+                    Italic: =true
+                    Size: =20
+                    Text: ="Posesión"
+                    Width: =640
+                    Y: =213
+                    ZIndex: =2
+
+                BanderaLocal_3 As image:
+                    BorderColor: =RGBA(204, 204, 204, 1)
+                    BorderThickness: =1
+                    Image: =PartidosPorGrupo.Selected.'Equipo Local'.Bandera
+                    RadiusBottomLeft: =70
+                    RadiusBottomRight: =70
+                    RadiusTopLeft: =70
+                    RadiusTopRight: =70
+                    X: =111
+                    Y: =37
+                    ZIndex: =3
+
+                BanderaVisitante_3 As image:
+                    BorderColor: =RGBA(204, 204, 204, 1)
+                    BorderThickness: =1
+                    Image: =PartidosPorGrupo.Selected.'Equipo Visitante'.Bandera
+                    RadiusBottomLeft: =70
+                    RadiusBottomRight: =70
+                    RadiusTopLeft: =70
+                    RadiusTopRight: =70
+                    X: =458
+                    Y: =37
+                    ZIndex: =4
+
+                SubtituloRojas_3 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =48
+                    Italic: =true
+                    Size: =18
+                    Text: ="Rojas"
+                    Width: =640
+                    Y: =637
+                    ZIndex: =6
+
+                SubtituloAmarillas_3 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =48
+                    Italic: =true
+                    Size: =18
+                    Text: ="Amarillas"
+                    Width: =610
+                    X: =15
+                    Y: =465
+                    ZIndex: =7
+
+                SubtituloGoles_3 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =48
+                    Italic: =true
+                    Size: =18
+                    Text: ="Goles"
+                    Width: =639
+                    X: =1
+                    Y: =274
+                    ZIndex: =8
+
+                EquipoLocal_3 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Bold
+                    Height: =38
+                    Size: =18
+                    Text: =PartidosPorGrupo.Selected.'Equipo Local'.' País/Nombre'
+                    Width: =194
+                    X: =64
+                    Y: =145
+                    ZIndex: =9
+
+                EquipoVisitante_3 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Bold
+                    Height: =38
+                    Size: =18
+                    Text: =PartidosPorGrupo.Selected.'Equipo Visitante'.' País/Nombre'
+                    Width: =178
+                    X: =419
+                    Y: =145
+                    ZIndex: =10
+
+                "GolesEquipoLocal_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    Height: =125
+                    Items: |-
+                        =Sort(Filter(FormaciónPartidos,StartsWith(ThisRecord.Equipo.' País/Nombre', EquipoLocal_3.Text ), Partido.'Partido '= PartidosPorGrupo.Selected.'Partido '),'Cantidad de goles',Descending)
+                        
+                        //Filter(FormaciónPartidos, Equipo.' País/Nombre' = eqSeleccionado.' País/Nombre', Partido.'ID Partido'= //PartidosPorGrupo.Selected.'ID Partido')
+                    Layout: =Layout.Vertical
+                    ShowScrollbar: =
+                    TemplatePadding: =0
+                    TemplateSize: =33
+                    Width: =322
+                    Y: =332
+                    ZIndex: =12
+
+                    DatosJugadorLocal_5 As label:
+                        Height: =31
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.Integrantes.Nombre & "  " &ThisItem.Integrantes.Apellido 
+                        Visible: =!IsBlank(ThisItem.'Cantidad de goles')
+                        Width: =221
+                        X: =37
+                        ZIndex: =1
+
+                    GolLocal_3 As image:
+                        Height: =29
+                        Image: =GOOOL
+                        OnSelect: =ThisItem.'Cantidad de goles'
+                        Visible: =!IsBlank(ThisItem.'Cantidad de goles')
+                        Width: =25
+                        X: =289
+                        Y: =3
+                        ZIndex: =2
+
+                    CantGoles_12 As label:
+                        FontWeight: =FontWeight.Bold
+                        Height: =29
+                        OnSelect: =Select(Parent)
+                        Size: =14
+                        Text: ="(" & ThisItem.'Cantidad de goles' & ")"
+                        Visible: =ThisItem.'Cantidad de goles' > 1
+                        Width: =71
+                        X: =243
+                        Y: =3
+                        ZIndex: =3
+
+                "GolesEquipoVisitante_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    Height: =125
+                    Items: =Sort(Filter(FormaciónPartidos,StartsWith(ThisRecord.Equipo.' País/Nombre', EquipoVisitante_3.Text ), Partido.'Partido '= PartidosPorGrupo.Selected.'Partido '),'Cantidad de goles',Descending)
+                    Layout: =Layout.Vertical
+                    ShowScrollbar: =false
+                    TemplatePadding: =0
+                    TemplateSize: =32
+                    Width: =320
+                    X: =320
+                    Y: =332
+                    ZIndex: =13
+
+                    DatosJugadorVisitante_3 As label:
+                        Align: =Align.Right
+                        Height: =31
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.Integrantes.Nombre & "  " &ThisItem.Integrantes.Apellido 
+                        Visible: =!IsBlank(ThisItem.'Cantidad de goles')
+                        Width: =233
+                        X: =61
+                        Y: =1
+                        ZIndex: =1
+
+                    GolVisitante_3 As image:
+                        DisplayMode: =DisplayMode.View
+                        Height: =29
+                        Image: =GOOOL
+                        OnSelect: |+
+                            =If(ThisItem.'Cantidad de goles' > 1, ThisItem.'Cantidad de goles')
+                            
+                        Visible: |+
+                            =!IsBlank(ThisItem.'Cantidad de goles')
+                            
+                        Width: =25
+                        X: =4
+                        Y: =3
+                        ZIndex: =2
+
+                    CantGoles_13 As label:
+                        Align: =Align.Right
+                        FontWeight: =FontWeight.Bold
+                        Height: =29
+                        OnSelect: =Select(Parent)
+                        Size: =14
+                        Text: ="(" & ThisItem.'Cantidad de goles' & ")"
+                        Visible: =ThisItem.'Cantidad de goles' > 1
+                        Width: =45
+                        X: =29
+                        Y: =3
+                        ZIndex: =3
+
+                Posesion_3 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Bold
+                    Height: =70
+                    Size: =20
+                    Text: =$"{PartidosPorGrupo.Selected.'Posesión Local'}%                          " &  $"                  {PartidosPorGrupo.Selected.'Posesión Visitante'}%"
+                    Width: =581
+                    X: =39
+                    Y: =204
+                    ZIndex: =14
+
+                label_Resultado_3 As label:
+                    Align: =Center
+                    Color: =RGBA(84, 84, 84, 1)
+                    DisplayMode: =DisplayMode.View
+                    Height: =32
+                    LineHeight: =1.8
+                    OnSelect: |-
+                        =Set(NavScreen, Fixture);
+                        Navigate(TitularesYResultados_1)
+                    Size: =16
+                    Text: = "-"
+                    Visible: =!resLocalAp.Visible && !IsBlank(Resultado90_3.Text)
+                    Width: =100
+                    X: =275
+                    Y: =83
+                    ZIndex: =29
+
+                LabelPenales_3 As label:
+                    Align: =Center
+                    Color: =RGBA(84, 84, 84, 1)
+                    DisplayMode: =DisplayMode.View
+                    Height: =49
+                    Italic: =true
+                    LineHeight: =1.8
+                    OnSelect: |-
+                        =Set(NavScreen, Fixture);
+                        Navigate(TitularesYResultados_1)
+                    Size: =15
+                    Text: ="Penales"
+                    Visible: =!IsBlank(ResultadoPen_3.Text) && !IsBlank(ResultadoPen_3.Visible)
+                    Width: =144
+                    X: =255
+                    Y: =136
+                    ZIndex: =30
+
+                Label120_3 As label:
+                    Align: =Center
+                    Color: =RGBA(84, 84, 84, 1)
+                    DisplayMode: =If(IsBlankOrError(label_eqLocal.Text), DisplayMode.View, DisplayMode.Edit)
+                    Height: =49
+                    Italic: =true
+                    OnSelect: |-
+                        =Set(NavScreen, Fixture);
+                        Navigate(TitularesYResultados_1)
+                    Size: =14
+                    Text: ="Alargue"
+                    Tooltip: ="Resultado Visitante"
+                    Visible: |-
+                        =!IsBlank(Resultado120_3.Text) && !IsBlank(Resultado120_3.Visible)
+                        
+                        // !resLocalAp.Visible && !IsBlank(resLocal_Al.Text)
+                    Width: =178
+                    X: =241
+                    Y: =83
+                    ZIndex: =31
+
+                Group3_6 As group:
+                    Height: =5
+                    Width: =5
+                    X: =-126
+                    Y: =-111
+                    ZIndex: =31
+
+                    Resultado90_3 As label:
+                        Align: =Center
+                        Color: =RGBA(84, 84, 84, 1)
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Bold
+                        Height: =48
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados_1)
+                        Size: =28
+                        Text: =PartidosPorGrupo.Selected.'Resultado 90 Local' & "    -    " & PartidosPorGrupo.Selected.'Resultado 90 Visitante'
+                        Tooltip: ="Resultado Local"
+                        Visible: =!IsBlank(Resultado90_3.Text)
+                        Width: =182
+                        X: =237
+                        Y: =37
+                        ZIndex: =17
+
+                    Resultado120_3 As label:
+                        Align: =Center
+                        Color: =RGBA(84, 84, 84, 1)
+                        DisplayMode: =If(IsBlankOrError(label_eqLocal.Text), DisplayMode.View, DisplayMode.Edit)
+                        FontWeight: =FontWeight.Bold
+                        Height: =49
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados_1)
+                        Size: =28
+                        Text: =PartidosPorGrupo.Selected.'Resultado Alargue Local'&"          "&PartidosPorGrupo.Selected.'Resultado Alargue Visitante' 
+                        Tooltip: ="Resultado Visitante"
+                        Visible: =!IsBlank(Resultado120_3.Text)
+                        Width: =178
+                        X: =236
+                        Y: =85
+                        ZIndex: =18
+
+                    ResultadoPen_3 As label:
+                        Align: =Center
+                        Color: =RGBA(84, 84, 84, 1)
+                        DisplayMode: =DisplayMode.View
+                        FontWeight: =FontWeight.Bold
+                        Height: =49
+                        LineHeight: =1.8
+                        OnSelect: |-
+                            =Set(NavScreen, Fixture);
+                            Navigate(TitularesYResultados_1)
+                        Size: =28
+                        Text: =PartidosPorGrupo.Selected.'Resultado Penales Local'&"           " &PartidosPorGrupo.Selected.'Resultado Penales Visitante' 
+                        Visible: = !IsBlank(PartidosPorGrupo.Selected.'Resultado Penales Local') //!resLocalAp.Visible && !IsBlank(Resultado90.Text)
+                        Width: =182
+                        X: =237
+                        Y: =134
+                        ZIndex: =22
+
+                AmarillasLocal_3 As gallery.galleryVertical:
+                    DisplayMode: =DisplayMode.View
+                    Height: =113
+                    Items: |+
+                        =Sort(Filter(FormaciónPartidos,StartsWith(ThisRecord.Equipo.' País/Nombre', EquipoLocal_3.Text),Partido.'Partido '= PartidosPorGrupo.Selected.'Partido '),Amarilla,Descending) 
+                        
+                    Layout: =Layout.Vertical
+                    ShowScrollbar: =false
+                    TemplateSize: =31
+                    Width: =322
+                    X: =1
+                    Y: =513
+                    ZIndex: =32
+
+                    Amarilla_11 As rectangle:
+                        BorderColor: =RGBA(126, 133, 0, 1)
+                        BorderThickness: =1.2
+                        Fill: =RGBA(255, 255, 0, 1)
+                        Height: =25
+                        OnSelect: =
+                        Visible: =!IsBlank(ThisItem.Amarilla)
+                        Width: =17
+                        X: =293
+                        Y: =5
+                        ZIndex: =1
+
+                    DatosJugadorLocal_14 As label:
+                        Height: =31
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.Integrantes.Nombre & "  " &ThisItem.Integrantes.Apellido 
+                        Visible: =!IsBlank(ThisItem.Amarilla)
+                        Width: =222
+                        X: =30
+                        ZIndex: =2
+
+                    CantGoles_14 As label:
+                        FontWeight: =FontWeight.Bold
+                        Height: =31
+                        OnSelect: =Select(Parent)
+                        Size: =9
+                        Text: ="(" & ThisItem.Amarilla & ")"
+                        Visible: =ThisItem.Amarilla > 1
+                        Width: =30
+                        X: =252
+                        ZIndex: =3
+
+                AmarillasVistante_3 As gallery.galleryVertical:
+                    DisplayMode: =DisplayMode.View
+                    Height: =113
+                    Items: =Sort(Filter(FormaciónPartidos,StartsWith(ThisRecord.Equipo.' País/Nombre', EquipoVisitante_3.Text),Partido.'Partido '= PartidosPorGrupo.Selected.'Partido '),Amarilla,Descending) 
+                    Layout: =Layout.Vertical
+                    TemplateSize: =31
+                    Width: =322
+                    X: =318
+                    Y: =513
+                    ZIndex: =33
+
+                    Amarilla_12 As rectangle:
+                        BorderColor: =RGBA(126, 133, 0, 1)
+                        BorderThickness: =1.2
+                        Fill: =RGBA(255, 255, 0, 1)
+                        Height: =25
+                        OnSelect: =
+                        Visible: =!IsBlank(ThisItem.Amarilla)
+                        Width: =17
+                        X: =4
+                        Y: =5
+                        ZIndex: =1
+
+                    DatosJugadorLocal_15 As label:
+                        Align: =Align.Right
+                        Height: =31
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.Integrantes.Nombre & "  " &ThisItem.Integrantes.Apellido
+                        Visible: =!IsBlank(ThisItem.Amarilla)
+                        Width: =233
+                        X: =61
+                        ZIndex: =2
+
+                    CantGoles_15 As label:
+                        FontWeight: =FontWeight.Bold
+                        Height: =31
+                        OnSelect: =Select(Parent)
+                        Text: ="(" & ThisItem.Amarilla & ")"
+                        Visible: =ThisItem.Amarilla > 1
+                        Width: =45
+                        X: =23
+                        ZIndex: =3
+
+                RojasLOCAL_3 As gallery.galleryVertical:
+                    Height: =114
+                    Items: |+
+                        =Filter(FormaciónPartidos,StartsWith(ThisRecord.Equipo.' País/Nombre',EquipoLocal_3.Text),Partido.'Partido '= PartidosPorGrupo.Selected.'Partido ',Roja)
+                        
+                    Layout: =Layout.Vertical
+                    TemplateSize: =32
+                    Width: =322
+                    X: =1
+                    Y: =685
+                    ZIndex: =34
+
+                    Roja_11 As rectangle:
+                        BorderColor: =RGBA(184, 0, 0, 1)
+                        BorderThickness: =1.2
+                        Fill: =RGBA(255, 0, 0, 1)
+                        Height: =25
+                        OnSelect: =
+                        Visible: =!IsBlank(ThisItem.Roja)
+                        Width: =17
+                        X: =293
+                        Y: =6
+                        ZIndex: =5
+
+                    DatosJugadorLocal_16 As label:
+                        Height: =30
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.Integrantes.Nombre & "  " &ThisItem.Integrantes.Apellido 
+                        Visible: =!IsBlank(ThisItem.Roja)
+                        Width: =198
+                        X: =31
+                        Y: =2
+                        ZIndex: =6
+
+                RojasVisitante_3 As gallery.galleryVertical:
+                    Height: =114
+                    Items: |
+                        =Filter(FormaciónPartidos,StartsWith(ThisRecord.Equipo.' País/Nombre',EquipoVisitante_3.Text),Partido.'Partido '= PartidosPorGrupo.Selected.'Partido ',Roja)
+                    Layout: =Layout.Vertical
+                    TemplateSize: =31
+                    Width: =322
+                    X: =318
+                    Y: =685
+                    ZIndex: =35
+
+                    Roja_12 As rectangle:
+                        BorderColor: =RGBA(184, 0, 0, 1)
+                        BorderThickness: =1.2
+                        Fill: =RGBA(255, 0, 0, 1)
+                        Height: =25
+                        OnSelect: =
+                        Visible: =!IsBlank(ThisItem.Roja)
+                        Width: =17
+                        X: =4
+                        Y: =6
+                        ZIndex: =5
+
+                    DatosJugadorLocal_17 As label:
+                        Align: =Align.Right
+                        Height: =30
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.Integrantes.Nombre & "  " &ThisItem.Integrantes.Apellido 
+                        Visible: =!IsBlank(ThisItem.Roja)
+                        Width: =233
+                        X: =61
+                        Y: =1
+                        ZIndex: =6
+
+        PlantelesPorPartido_3 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1153
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            Container2_11 As groupContainer.manualLayoutContainer:
+                Height: =108
+                Width: =640
+                ZIndex: =1
+
+                Container3_17 As groupContainer.manualLayoutContainer:
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =4
+                    Width: =624
+                    X: =7
+                    Y: =104
+                    ZIndex: =3
+
+                Container3_18 As groupContainer.manualLayoutContainer:
+                    Fill: =RGBA(230, 230, 230, 1)
+                    Height: =4
+                    Width: =624
+                    X: =7
+                    Y: =104
+                    ZIndex: =4
+
+                Container3_16 As groupContainer.manualLayoutContainer:
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =101
+                    Width: =1
+                    X: =318
+                    Y: =7
+                    ZIndex: =5
+
+                BotonPlantelEquipoVisitante_3 As button:
+                    Color: =RGBA(128, 128, 128, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FontWeight: =FontWeight.Bold
+                    Height: =69
+                    HoverColor: =RGBA(0, 0, 0, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: =Set(plantelVisible, true); Set(eqSeleccionado, PartidosPorGrupo.Selected.'Equipo Visitante')
+                    PressedFill: |
+                        =
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =24
+                    Text: =PartidosPorGrupo.Selected.'Equipo Visitante'.' País/Nombre'
+                    Width: =294
+                    X: =325
+                    Y: =17
+                    ZIndex: =7
+
+                BotonPlantelEquipoLocal_3 As button:
+                    Color: =RGBA(128, 128, 128, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FontWeight: =FontWeight.Bold
+                    Height: =69
+                    HoverColor: =RGBA(0, 0, 0, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: =Set(plantelVisible, true); Set(eqSeleccionado, PartidosPorGrupo.Selected.'Equipo Local')
+                    PressedColor: =
+                    PressedFill: =
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =24
+                    Text: =PartidosPorGrupo.Selected.'Equipo Local'.' País/Nombre'
+                    Width: =318
+                    X: =1
+                    Y: =17
+                    ZIndex: =8
+
+                Container3_15 As groupContainer.manualLayoutContainer:
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =4
+                    Width: =624
+                    X: =6
+                    ZIndex: =9
+
+            Container3_19 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =4
+                Width: =624
+                X: =8
+                Y: =101
+                ZIndex: =2
+
+            "PlantelPais_10 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver4.0'":
+                DelayItemLoading: =
+                Height: =1025
+                Items: |-
+                    =//Filter(FormaciónPartidos,StartsWith(ThisRecord.Equipo.' País/Nombre', EquipoLocal.Text))
+                    Filter(FormaciónPartidos, Equipo.' País/Nombre' = eqSeleccionado.' País/Nombre' 
+                    && Partido.'Partido ' = PartidosPorGrupo.Selected.'Partido ')
+                Layout: =Layout.Vertical
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =124
+                Y: =128
+                ZIndex: =3
+
+                Button8_5 As button:
+                    DisplayMode: =DisplayMode.View
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =101
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =0
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =20
+                    Size: =24
+                    Text: =""
+                    Width: =604
+                    X: =8
+                    ZIndex: =1
+
+                Altura_9 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Normal
+                    Height: =25
+                    Italic: =true
+                    OnSelect: =
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =18
+                    Text: =ThisItem.Integrantes.Altura  & " cm"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =90
+                    X: =500
+                    Y: =49
+                    ZIndex: =2
+
+                Nombre_11 As label:
+                    Height: =27
+                    OnSelect: =
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =18
+                    Text: =ThisItem.Integrantes.Nombre & " " & ThisItem.Integrantes.Apellido &" (" & ThisItem.Integrantes.Camiseta& ")"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =285
+                    X: =122
+                    Y: =13
+                    ZIndex: =3
+
+                Label5_8 As label:
+                    Align: =Align.Right
+                    AutoHeight: =true
+                    Height: =25
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Size: =18
+                    Text: =ThisItem.Integrantes.Edad & " Años"
+                    Width: =112
+                    X: =478
+                    Y: =6
+                    ZIndex: =4
+
+                Posicion_10 As button:
+                    DisabledBorderColor: =RGBA(255, 145, 77, 1)
+                    DisabledColor: =If(ThisItem.Integrantes.Posicion = "DEL", RGBA(255, 145, 77, 1), If(ThisItem.Integrantes.Posicion = "MED", RGBA(126, 217, 87, 100), RGBA(0, 0, 0, 100)))
+                    DisabledFill: =RGBA(136, 160, 209, 1)
+                    DisplayMode: =DisplayMode.View
+                    Fill: =If(ThisItem.Integrantes.Posicion = "DEL", RGBA(255, 145, 77, 1), If(ThisItem.Integrantes.Posicion = "MED", RGBA(126, 217, 87, 100), If(ThisItem.Integrantes.Posicion = "DEF", RGBA(91,143,228,89), RGBA(242, 215, 61, 95))))
+                    Height: =77
+                    OnSelect: =
+                    RadiusBottomLeft: =70
+                    RadiusBottomRight: =70
+                    RadiusTopLeft: =70
+                    RadiusTopRight: =70
+                    Size: =20
+                    Text: =ThisItem.Integrantes.Posicion
+                    Width: =75
+                    X: =19
+                    Y: =12
+                    ZIndex: =6
+
+                Label5_9 As label:
+                    Height: =39
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: |-
+                        ="Club: " & ThisItem.Integrantes.Club
+                    Width: =353
+                    X: =120
+                    Y: =40
+                    ZIndex: =10
+
+                tarjetas_5 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =10
+
+                    Amarilla_13 As rectangle:
+                        BorderColor: =RGBA(126, 133, 0, 1)
+                        BorderThickness: =1.2
+                        Fill: =RGBA(255, 255, 0, 1)
+                        Height: =30
+                        OnSelect: =
+                        Visible: =ThisItem.Amarilla
+                        Width: =25
+                        X: =460
+                        Y: =10
+                        ZIndex: =7
+
+                    "'cantidad amarillas_5' As label":
+                        Align: =Align.Center
+                        AutoHeight: =true
+                        FontWeight: =FontWeight.Semibold
+                        Height: =25
+                        OnSelect: =Select(Parent)
+                        Size: =18
+                        Text: =If(ThisItem.Amarilla > 1, ThisItem.Amarilla)
+                        Width: =112
+                        X: =416
+                        Y: =3
+                        ZIndex: =8
+
+                    Roja_13 As rectangle:
+                        BorderColor: =RGBA(184, 0, 0, 1)
+                        BorderThickness: =1.2
+                        Fill: =RGBA(255, 0, 0, 1)
+                        Height: =30
+                        OnSelect: =
+                        Visible: =ThisItem.Roja
+                        Width: =25
+                        X: =460
+                        Y: =10
+                        ZIndex: =9
+

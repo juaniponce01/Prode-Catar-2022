@@ -1,0 +1,116 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "axx_equipos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "axx_equipo",
+    "MaxGetRowsCount": 2000,
+    "Name": "Equipos",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "{Attachments}": "Attachments",
+      "axx_axx_apuesta_equipo_axx_equipo": "Apuestas (axx_axx_apuesta_equipo_axx_equipo)",
+      "axx_axx_apuesta_seleccion_axx_equipo": "Apuestas (axx_axx_apuesta_seleccion_axx_equipo)",
+      "axx_axx_formacionpartido_Equipo_axx_equipo": "FormaciónPartidos",
+      "axx_axx_partido_equipoLocal_axx_equipo": "Partidos (axx_axx_partido_equipoLocal_axx_equipo)",
+      "axx_axx_partido_equipoVisitante_axx_equipo": "Partidos (axx_axx_partido_equipoVisitante_axx_equipo)",
+      "axx_axx_plantel_equipo_axx_equipo": "Planteles",
+      "axx_axx_tipoapuesta_seleccionPremiada_axx_equ": "TipoApuestas",
+      "axx_bandera": "Bandera",
+      "axx_banderaid": "axx_banderaId",
+      "axx_equipo_Annotations": "Notas",
+      "axx_equipo_AsyncOperations": "Trabajos del sistema",
+      "axx_equipo_BulkDeleteFailures": "Errores de eliminación en masa",
+      "axx_equipo_DuplicateBaseRecord": "Registros duplicados (axx_equipo_DuplicateBaseRecord)",
+      "axx_equipo_DuplicateMatchingRecord": "Registros duplicados (axx_equipo_DuplicateMatchingRecord)",
+      "axx_equipo_MailboxTrackingFolders": "Carpetas de seguimiento automático del buzón",
+      "axx_equipo_PrincipalObjectAttributeAccesses": "Uso compartido de campos",
+      "axx_equipo_ProcessSession": "Sesiones de proceso",
+      "axx_equipo_SyncErrors": "Errores de sincronización",
+      "axx_equipoid": "Equipo",
+      "axx_etapaalcanzada": "Etapa Alcanzada",
+      "axx_golesacumulados": "Goles acumulados",
+      "axx_golesacumulados_date": "Goles acumulados (fecha de última actualización)",
+      "axx_golesacumulados_state": "Goles acumulados (estado)",
+      "axx_golesrecibidos": "Goles recibidos",
+      "axx_grupo": "Grupo",
+      "axx_name": " País/Nombre",
+      "axx_paisnombre": "ID Equipo",
+      "axx_perfilUsuario": "Perfil Usuario",
+      "axx_perfilUsuario_axx_equipo_axx_equipo": "PerfilUsuarios",
+      "axx_puesto": "Puesto",
+      "axx_ultimaparticipacion": "Última Participación",
+      "createdby": "Autor",
+      "createdon": "Fecha de creación",
+      "createdonbehalfby": "Autor (delegado)",
+      "importsequencenumber": "Número de secuencia de importación",
+      "modifiedby": "Modificado por",
+      "modifiedon": "Fecha de modificación",
+      "modifiedonbehalfby": "Modificado por (delegado)",
+      "organizationid": "Id. de la organización",
+      "overriddencreatedon": "Fecha de creación del registro",
+      "statecode": "Estado",
+      "statuscode": "Razón para el estado",
+      "timezoneruleversionnumber": "Número de versión de regla de zona horaria",
+      "utcconversiontimezonecode": "Código de zona horaria de conversión UTC",
+      "versionnumber": "Número de versión"
+    },
+    "PreferredName": "Equipos",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Equipos (Views)",
+    "Name": "_axx_equipo_views",
+    "RelatedEntityName": "Equipos",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5ee8470b-38ed-498c-aae0-943653d28a5d": "Vista asociada de Equipo",
+      "9254332b-b7ff-41a1-a1cc-0df7513350fc": "Vista de búsqueda avanzada de Equipo",
+      "bcd7d173-d4e1-43d1-b6af-b79199f79efc": "Vista de búsqueda de Equipo",
+      "ebf178d8-d9b4-4efd-842a-83e289955e4a": "Equipos",
+      "f4aba5e9-ac57-4f89-a57d-cf5008f7cffa": "Equipos inactivo"
+    }
+  },
+  {
+    "DisplayName": "Estado (Equipos)",
+    "Name": "axx_equipo_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Activo",
+      "1": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Equipos"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Equipos",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Razón para el estado (Equipos)",
+    "Name": "axx_equipo_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Activo",
+      "2": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Equipos"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Equipos",
+    "Type": "OptionSetInfo"
+  }
+]

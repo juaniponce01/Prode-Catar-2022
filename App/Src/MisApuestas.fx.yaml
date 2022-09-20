@@ -1,0 +1,1573 @@
+"MisApuestas As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Fill: =RGBA(235, 236, 240, 1)
+    OnHidden: =Reset(BuscadorJugador)
+    OnVisible: =
+
+    ApuestasExtras As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =1035
+        Width: =Parent.Width
+        Y: =101
+        ZIndex: =1
+
+        ApuestaGoleador As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =719
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            TituloApartadoApuestas As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =68
+                Size: =24
+                Text: ="MIS APUESTAS "
+                Width: =640
+                Y: =48
+                ZIndex: =8
+
+            Group6 As group:
+                Height: =5
+                Width: =5
+                X: =80
+                Y: =80
+                ZIndex: =8
+
+                Button2_8 As button:
+                    BorderThickness: =0
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =67
+                    HoverFill: |
+                        =
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =24
+                    Text: ="Botón"
+                    Width: =520
+                    X: =60
+                    Y: =288
+                    ZIndex: =1
+
+                BuscadorJugador As text:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Default: =""
+                    Height: =45
+                    HintText: ="Buscar Jugadores"
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Italic: =true
+                    Size: =18
+                    Width: =424
+                    X: =84
+                    Y: =299
+                    ZIndex: =2
+
+                Icon2_15 As icon.Search:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =40
+                    Icon: =Icon.Search
+                    Width: =49
+                    X: =508
+                    Y: =300
+                    ZIndex: =3
+
+            TituloGoleadorDelTorneo As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =Normal
+                Height: =60
+                Size: =26
+                Text: ="GOLEADOR DEL TORNEO"
+                Width: =640
+                Y: =116
+                ZIndex: =9
+
+            AvisoApuestaGoleador As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =101
+                Size: =21
+                Text: |-
+                    ="Goleador Apostado: " & If(IsBlank(GoleadorApostado), "Aún no apostaste", GoleadorApostado.Nombre & " " & GoleadorApostado.Apellido)
+                Width: =640
+                Y: =469
+                ZIndex: =10
+
+            GalGoleadores_4 As gallery.galleryVertical:
+                Default: ={}
+                Height: =149
+                Items: |+
+                    =FirstN(Sort(Search(Filter(Planteles, 'Tipo de Integrante' = 'Tipo de Integrante Choice'.Jugador), BuscadorJugador.Text,"axx_nombre","axx_apellido"),Apellido), 1)
+                    
+                Layout: =Layout.Vertical
+                OnSelect: |
+                    =
+                ShowScrollbar: |
+                    =false
+                TemplateSize: =122
+                Visible: =!IsBlank(BuscadorJugador.Text)
+                Y: =557
+                ZIndex: =11
+
+                Button4_19 As button:
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    DisabledFill: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =122
+                    OnSelect: =
+                    RadiusBottomLeft: =30
+                    RadiusBottomRight: =30
+                    RadiusTopLeft: =30
+                    RadiusTopRight: =30
+                    Size: =24
+                    Text: =""
+                    Width: =609
+                    X: =13
+                    ZIndex: =1
+
+                Posicion_12 As button:
+                    BorderThickness: =1
+                    DisabledBorderColor: =RGBA(255, 145, 77, 1)
+                    DisabledColor: =If(ThisItem.Posicion = "DEL", RGBA(255, 145, 77, 1), If(ThisItem.Posicion = "MED", RGBA(126, 217, 87, 100), RGBA(0, 0, 0, 100)))
+                    DisabledFill: =RGBA(136, 160, 209, 1)
+                    DisplayMode: =DisplayMode.View
+                    Fill: =If(ThisItem.Posicion = "DEL", RGBA(255, 145, 77, 1), If(ThisItem.Posicion = "MED", RGBA(126, 217, 87, 100), If(ThisItem.Posicion = "DEF", RGBA(91,143,228,89), RGBA(242, 215, 61, 95))))
+                    Height: =90
+                    OnSelect: =
+                    PaddingBottom: =
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    RadiusBottomLeft: =70
+                    RadiusBottomRight: =70
+                    RadiusTopLeft: =70
+                    RadiusTopRight: =70
+                    Size: =24
+                    Text: =ThisItem.Posicion
+                    Width: =90
+                    X: =41
+                    Y: =16
+                    ZIndex: =2
+
+                Nombre_13 As label:
+                    Height: =29
+                    OnSelect: =
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =18
+                    Text: =ThisItem.Apellido &" "& ThisItem.Nombre
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =264
+                    X: =149
+                    Y: =27
+                    ZIndex: =6
+
+                Label7_9 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =37
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =18
+                    Text: =ThisItem.Equipo.' País/Nombre'
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =249
+                    X: =149
+                    Y: =56
+                    ZIndex: =8
+
+                Button6_7 As button:
+                    BorderThickness: =1
+                    DisabledColor: =RGBA(255, 255, 255, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(102, 182, 227, 1)
+                    Height: =58
+                    HoverFill: =RGBA(0, 121, 187, 1)
+                    OnSelect: =SubmitForm(FormGoleador);EditForm(FormGoleador);Set(GoleadorApostado, ThisItem);
+                    RadiusBottomLeft: =30
+                    RadiusBottomRight: =30
+                    RadiusTopLeft: =30
+                    RadiusTopRight: =30
+                    Size: =18
+                    Text: ="Apostá"
+                    Visible: |+
+                        =
+                        true
+                        
+                    Width: =133
+                    X: =469
+                    Y: =35
+                    ZIndex: =11
+
+            DetalleApuestaAsistidor_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =82
+                Size: =18
+                Text: ="Apostá por aquel jugador que se puso la camiseta y asistió en todas."
+                Width: =580
+                X: =30
+                Y: =187
+                ZIndex: =12
+
+            FraseAsistidor_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(203, 102, 102, 1)
+                FontWeight: =Normal
+                Height: =104
+                Italic: =true
+                Size: =18
+                Text: |-
+                    ="""La pelota no se mancha."" 
+                    Diego Armando Maradona"
+                Width: =640
+                Y: =365
+                ZIndex: =13
+
+            Icon8 As icon.NextArrow:
+                Color: =RGBA(30, 75, 239, 1)
+                Icon: =Icon.NextArrow
+                OnSelect: =Navigate(MisApuestas2)
+                X: =546
+                Y: =17
+                ZIndex: =15
+
+        ApuestaMayorAsistidor_1 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =605
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =4
+
+            TituloAsistidorMenosVencida As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =Normal
+                Height: =44
+                Size: =26
+                Text: ="MAYOR ASISTIDOR DEL TORNEO"
+                Width: =640
+                Y: =40
+                ZIndex: =1
+
+            FondoInputBusqueda As button:
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =67
+                HoverFill: |
+                    =
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Size: =24
+                Text: ="Botón"
+                Width: =520
+                X: =60
+                Y: =206
+                ZIndex: =2
+
+            BuscadorJugadores_4 As text:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Default: =""
+                Height: =58
+                HintText: ="Buscar jugadores"
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Italic: =true
+                Size: =18
+                Width: =424
+                X: =84
+                Y: =212
+                ZIndex: =3
+
+            Lupita As icon.Search:
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =38
+                Icon: =Icon.Search
+                Width: =49
+                X: =508
+                Y: =226
+                ZIndex: =4
+
+            FraseAsistidor As label:
+                Align: =Align.Center
+                Color: =RGBA(203, 102, 102, 1)
+                FontWeight: =Normal
+                Height: =104
+                Italic: =true
+                Size: =18
+                Text: |-
+                    ="""Ningún jugador es tan bueno como todos juntos."" 
+                    Di Stéfano"
+                Width: =640
+                Y: =296
+                ZIndex: =5
+
+            DetalleApuestaAsistidor As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =82
+                Size: =18
+                Text: ="Apostá por aquel jugador que se puso la camiseta y asistió en todas."
+                Width: =580
+                X: =30
+                Y: =101
+                ZIndex: =6
+
+            Asitidores As gallery.galleryVertical:
+                Default: ={}
+                Height: =166
+                Items: |+
+                    =FirstN(Sort(Search(Filter(Planteles, 'Tipo de Integrante' = 'Tipo de Integrante Choice'.Jugador), BuscadorJugadores_4.Text,"axx_nombre","axx_apellido"),Apellido), 1)
+                    
+                Layout: =Layout.Vertical
+                OnSelect: |
+                    =
+                ShowScrollbar: |
+                    =false
+                TemplateSize: =145
+                Visible: =!IsBlank(BuscadorJugadores_4.Text)
+                Y: =469
+                ZIndex: =7
+
+                Button4_18 As button:
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    DisabledFill: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =128
+                    OnSelect: =
+                    RadiusBottomLeft: =30
+                    RadiusBottomRight: =30
+                    RadiusTopLeft: =30
+                    RadiusTopRight: =30
+                    Size: =24
+                    Text: =""
+                    Width: =609
+                    X: =12
+                    Y: =8
+                    ZIndex: =1
+
+                Posicion_11 As button:
+                    BorderThickness: =1
+                    DisabledBorderColor: =RGBA(255, 145, 77, 1)
+                    DisabledColor: =If(ThisItem.Posicion = "DEL", RGBA(255, 145, 77, 1), If(ThisItem.Posicion = "MED", RGBA(126, 217, 87, 100), RGBA(0, 0, 0, 100)))
+                    DisabledFill: =RGBA(136, 160, 209, 1)
+                    DisplayMode: =DisplayMode.View
+                    Fill: =If(ThisItem.Posicion = "DEL", RGBA(255, 145, 77, 1), If(ThisItem.Posicion = "MED", RGBA(126, 217, 87, 100), If(ThisItem.Posicion = "DEF", RGBA(91,143,228,89), RGBA(242, 215, 61, 95))))
+                    Height: =90
+                    OnSelect: =
+                    PaddingBottom: =
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    RadiusBottomLeft: =70
+                    RadiusBottomRight: =70
+                    RadiusTopLeft: =70
+                    RadiusTopRight: =70
+                    Size: =24
+                    Text: =ThisItem.Posicion
+                    Width: =90
+                    X: =41
+                    Y: =27
+                    ZIndex: =2
+
+                Nombre_12 As label:
+                    Height: =29
+                    OnSelect: =
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =18
+                    Text: =ThisItem.Apellido &" "& ThisItem.Nombre
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =264
+                    X: =149
+                    Y: =35
+                    ZIndex: =6
+
+                Label7_8 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =37
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =18
+                    Text: =ThisItem.Equipo.' País/Nombre'
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =249
+                    X: =149
+                    Y: =64
+                    ZIndex: =8
+
+                Button6_6 As button:
+                    BorderThickness: =1
+                    Fill: =RGBA(102, 182, 227, 1)
+                    Height: =58
+                    HoverBorderColor: =RGBA(0, 121, 187, 1)
+                    HoverFill: =RGBA(0, 121, 187, 1)
+                    OnSelect: =SubmitForm(FormAsistidor);EditForm(FormAsistidor);Set(AsistidorApostado, ThisItem);
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 121, 187, 1)
+                    RadiusBottomLeft: =30
+                    RadiusBottomRight: =30
+                    RadiusTopLeft: =30
+                    RadiusTopRight: =30
+                    Size: =18
+                    Text: ="Apostá"
+                    Visible: |+
+                        =
+                        true
+                        
+                    Width: =133
+                    X: =459
+                    Y: =43
+                    ZIndex: =11
+
+            MensajeApostadorAsistidor As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =84
+                Size: =22
+                Text: |-
+                    ="Asistidor apostado: " & If(IsBlank(AsistidorApostado), "Aún no apostaste", AsistidorApostado.Nombre & " " & AsistidorApostado.Apellido)
+                Width: =580
+                X: =30
+                Y: =383
+                ZIndex: =8
+
+        ApuestaVallaMvencida As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =628
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =5
+
+            FraseValla_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(203, 102, 102, 1)
+                FontWeight: =Normal
+                Height: =91
+                Italic: =true
+                Size: =18
+                Text: |-
+                    ="""En el puesto de los bobos, yo soy el más vivo."" 
+                    Hugo Gati"
+                Width: =610
+                X: =15
+                Y: =298
+                ZIndex: =8
+
+            Group6_1 As group:
+                Height: =5
+                Width: =5
+                X: =80
+                Y: =-81
+                ZIndex: =8
+
+                Button2_15 As button:
+                    BorderThickness: =0
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =67
+                    HoverFill: |
+                        =
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =24
+                    Text: ="Botón"
+                    Width: =520
+                    X: =60
+                    Y: =202
+                    ZIndex: =1
+
+                BuscadorArquero As text:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Default: =""
+                    Height: =55
+                    HintText: ="Buscar arqueros"
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Italic: =true
+                    Size: =18
+                    Width: =424
+                    X: =82
+                    Y: =209
+                    ZIndex: =2
+
+                Icon2_17 As icon.Search:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =36
+                    Icon: =Icon.Search
+                    Width: =49
+                    X: =519
+                    Y: =216
+                    ZIndex: =3
+
+            DetalleApuestaValla_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =82
+                Size: =18
+                Text: ="Apostá por el arquero y sus guantes de oro."
+                Width: =580
+                X: =30
+                Y: =100
+                ZIndex: =9
+
+            TituloValla As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =Normal
+                Height: =60
+                Size: =26
+                Text: ="VALLA MENOS VENCIDA"
+                Width: =640
+                Y: =40
+                ZIndex: =10
+
+            GalARqueros_1 As gallery.galleryVertical:
+                Default: ={}
+                Height: =143
+                Items: |+
+                    =Sort(Search(Filter(Planteles,Posicion = "ARQ"),BuscadorArquero.Text,"axx_nombre","axx_apellido"),Apellido)
+                    
+                    //Sort(Search(Filter(Planteles, Posicion = "ARQ"), BuscadorJugadores.Text,"axx_nombre","axx_apellido"),Apellido
+                    
+                Layout: =Layout.Vertical
+                OnSelect: |
+                    =
+                ShowScrollbar: |
+                    =false
+                TemplateSize: =122
+                Visible: =!IsBlank(BuscadorArquero.Text)
+                Y: =457
+                ZIndex: =11
+
+                Button4_20 As button:
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    DisabledFill: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =128
+                    OnSelect: =
+                    RadiusBottomLeft: =30
+                    RadiusBottomRight: =30
+                    RadiusTopLeft: =30
+                    RadiusTopRight: =30
+                    Size: =24
+                    Text: =""
+                    Width: =606
+                    X: =9
+                    ZIndex: =1
+
+                Posicion_13 As button:
+                    BorderThickness: =1
+                    DisabledBorderColor: =RGBA(255, 145, 77, 1)
+                    DisabledColor: =//If(ThisItem.posicion = "DEL", RGBA(255, 145, 77, 1), If(ThisItem.Posicion = "MED", RGBA(126, 217, 87, 100), RGBA(0, 0, 0, 100)))
+                    DisabledFill: =RGBA(136, 160, 209, 1)
+                    DisplayMode: =DisplayMode.View
+                    Fill: =If(ThisItem.Posicion = "DEL", RGBA(255, 145, 77, 1), If(ThisItem.Posicion = "MED", RGBA(126, 217, 87, 100), If(ThisItem.Posicion = "DEF", RGBA(91,143,228,89), RGBA(242, 215, 61, 95))))
+                    Height: =90
+                    OnSelect: =
+                    PaddingBottom: =
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    RadiusBottomLeft: =70
+                    RadiusBottomRight: =70
+                    RadiusTopLeft: =70
+                    RadiusTopRight: =70
+                    Size: =24
+                    Text: =ThisItem.Posicion
+                    Width: =90
+                    X: =43
+                    Y: =16
+                    ZIndex: =2
+
+                Nombre_14 As label:
+                    Height: =29
+                    OnSelect: =
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =18
+                    Text: =ThisItem.Apellido &" "& ThisItem.Nombre
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =264
+                    X: =148
+                    Y: =35
+                    ZIndex: =6
+
+                Label7_10 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =37
+                    Italic: =true
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =18
+                    Text: =ThisItem.Equipo.' País/Nombre'
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =249
+                    X: =148
+                    Y: =69
+                    ZIndex: =8
+
+                Button6_8 As button:
+                    BorderThickness: =1
+                    Fill: =RGBA(102, 182, 227, 1)
+                    Height: =58
+                    OnSelect: =SubmitForm(FormVallaInvicta);EditForm(FormVallaInvicta); Set(ArqueroApostado, ThisItem)
+                    RadiusBottomLeft: =30
+                    RadiusBottomRight: =30
+                    RadiusTopLeft: =30
+                    RadiusTopRight: =30
+                    Size: =18
+                    Text: ="Apostá"
+                    Visible: |+
+                        =
+                        true
+                        
+                    Width: =133
+                    X: =457
+                    Y: =35
+                    ZIndex: =11
+
+            Label1_26 As label:
+                Align: =Align.Center
+                Color: =RGBA(84, 84, 84, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =98
+                Size: =21
+                Text: |-
+                    ="Arquero Apostado: " & If(IsBlank(ArqueroApostado), "Aún no apostaste", ArqueroApostado.Nombre & " " & ArqueroApostado.Apellido)
+                Width: =640
+                Y: =374
+                ZIndex: =12
+
+    Image1_23 As image:
+        Height: =60
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Stretch
+        OnSelect: =Navigate(PerfilUsuario)
+        RadiusBottomLeft: =70
+        RadiusBottomRight: =70
+        RadiusTopLeft: =70
+        RadiusTopRight: =70
+        Width: =60
+        X: =84
+        Y: =20
+        ZIndex: =6
+
+    Icon11_10 As icon.Home:
+        Color: =RGBA(30, 75, 239, 1)
+        Height: =60
+        Icon: =Icon.Home
+        OnSelect: =Navigate(Home)
+        Width: =60
+        X: =477
+        Y: =20
+        ZIndex: =7
+
+    FormAsistidor As form:
+        DataSource: =Apuestas_1
+        DefaultMode: =FormMode.New
+        Height: =0
+        Item: =LookUp(Apuestas_1,'Tipo de Apuesta'.Nombre = "9" && Usuario.'Correo electrónico principal' = User().Email)
+        OnFailure: =Notify("No se ha podido guardar el goleador", NotificationType.Error, 1000)
+        OnSuccess: =Notify("Se ha guardado exitosamente", NotificationType.Success, 1000)
+        Visible: =false
+        Width: =640
+        Y: =170
+        ZIndex: =8
+
+        Jugador_DataCard1_2 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_jugador"
+            Default: =ThisItem.Jugador
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_jugador")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =218
+            Required: =false
+            Update: =DataCardValue5_2.Selected
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey5_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =24
+                Y: =112
+                ZIndex: =1
+
+            DataCardValue5_2 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DefaultSelectedItems: =Asitidores.Selected
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].Jugador)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].Jugador),DataCardValue5_2.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =138
+                ZIndex: =2
+
+            ErrorMessage4_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue5_2.Y + DataCardValue5_2.Height
+                ZIndex: =3
+
+            StarVisible4_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey5_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5_1.Y
+                ZIndex: =4
+
+        "'Tipo de Apuesta_DataCard2_2' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_tipoApuesta"
+            Default: =ThisItem.'Tipo de Apuesta'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_tipoApuesta")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue2_2.Selected
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey2_1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2_2 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =LookUp(TipoApuestas, Nombre = "9")
+                DefaultSelectedItems: =LookUp(TipoApuestas, Nombre = "9")
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].'Tipo de Apuesta')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].'Tipo de Apuesta'),DataCardValue2_2.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2_1.Y + DataCardKey2_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage2_2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue2_2.Y + DataCardValue2_2.Height
+                ZIndex: =3
+
+            StarVisible2_2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey2_1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey2_1.Y
+                ZIndex: =4
+
+        Equipo_DataCard6 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_equipo"
+            Default: =ThisItem.Equipo
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_equipo")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue4.Selected
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey4 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue4 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Asitidores.Selected.Equipo
+                DefaultSelectedItems: =Asitidores.Selected.Equipo
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].Equipo)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].Equipo),DataCardValue4.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                ZIndex: =2
+
+            ErrorMessage4 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue4.Y + DataCardValue4.Height
+                ZIndex: =3
+
+            StarVisible4 As label:
+                Align: =Align.Center
+                Height: =DataCardKey4.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey4.Y
+                ZIndex: =4
+
+        Seleccion_DataCard3 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_seleccion"
+            Default: =ThisItem.Seleccion
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_seleccion")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue7.Selected
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey7 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue7 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Asitidores.Selected.Equipo
+                DefaultSelectedItems: =Asitidores.Selected.Equipo
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].Seleccion)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].Seleccion),DataCardValue7.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage6 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue7.Y + DataCardValue7.Height
+                ZIndex: =3
+
+            StarVisible6 As label:
+                Align: =Align.Center
+                Height: =DataCardKey7.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey7.Y
+                ZIndex: =4
+
+    NavBar_19 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =8
+
+        Container1_17 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(235, 236, 240, 1)
+            Height: =100
+            Width: =640
+            ZIndex: =2
+
+        Icon1_22 As icon.Hamburger:
+            Color: =RGBA(30, 75, 239, 1)
+            Height: =70
+            Icon: =Icon.Hamburger
+            OnSelect: |-
+                =Navigate(Menu, ScreenTransition.Cover);
+                Set(NavScreen, Fixture)
+            Width: =50
+            X: =556
+            Y: =20
+            ZIndex: =3
+
+        Container2_18 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =1
+            Width: =640
+            Y: =100
+            ZIndex: =4
+
+        Icon_back_19 As icon.ChevronLeft:
+            Color: =RGBA(30, 75, 239, 1)
+            Height: =50
+            Icon: =Icon.ChevronLeft
+            OnSelect: =If(NavScreen = Home, Back(), Navigate(NavScreen))
+            Width: =50
+            X: =21
+            Y: =25
+            ZIndex: =5
+
+    FormVallaInvicta As form:
+        DataSource: =Apuestas_1
+        DefaultMode: =FormMode.New
+        Height: =0
+        Item: =LookUp(Apuestas_1,'Tipo de Apuesta'.Nombre = "5" && Usuario.'Correo electrónico principal' = User().Email)
+        OnFailure: =Notify("No se ha podido guardar el arquero", NotificationType.Error, 1000)
+        OnSuccess: =Notify("Se ha guardado exitosamente", NotificationType.Success, 1000)
+        Visible: =false
+        Width: =640
+        Y: =132
+        ZIndex: =9
+
+        Jugador_DataCard1_3 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_jugador"
+            Default: =ThisItem.Jugador
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_jugador")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =114
+            Required: =false
+            Update: =DataCardValue5_3.Selected
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey5_2 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue5_3 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =GalARqueros_1.Selected
+                DefaultSelectedItems: =GalARqueros_1.Selected
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].Jugador)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].Jugador),DataCardValue5_3.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                ZIndex: =2
+
+            ErrorMessage4_2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue5_3.Y + DataCardValue5_3.Height
+                ZIndex: =3
+
+            StarVisible4_2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey5_2.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5_2.Y
+                ZIndex: =4
+
+        "'Tipo de Apuesta_DataCard2_3' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_tipoApuesta"
+            Default: =ThisItem.'Tipo de Apuesta'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_tipoApuesta")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue2_3.Selected
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey2_2 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2_3 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =LookUp(TipoApuestas, Nombre = "5")
+                DefaultSelectedItems: =LookUp(TipoApuestas, Nombre = "5")
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].'Tipo de Apuesta')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].'Tipo de Apuesta'),DataCardValue2_3.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =41
+                ZIndex: =2
+
+            ErrorMessage2_3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =27
+                Y: =99
+                ZIndex: =3
+
+            StarVisible2_3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey2_2.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey2_2.Y
+                ZIndex: =4
+
+        Equipo_DataCard5 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_equipo"
+            Default: =ThisItem.Equipo
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_equipo")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue3.Selected
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey3 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue3 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =GalARqueros_1.Selected.Equipo
+                DefaultSelectedItems: =GalARqueros_1.Selected.Equipo
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].Equipo)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].Equipo),DataCardValue3.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                ZIndex: =2
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue3.Y + DataCardValue3.Height
+                ZIndex: =3
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey3.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey3.Y
+                ZIndex: =4
+
+        Seleccion_DataCard2 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_seleccion"
+            Default: =ThisItem.Seleccion
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_seleccion")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue5.Selected
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey5 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue5 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =GalARqueros_1.Selected.Equipo
+                DefaultSelectedItems: =GalARqueros_1.Selected.Equipo
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].Seleccion)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].Seleccion),DataCardValue5.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                ZIndex: =2
+
+            ErrorMessage5 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue5.Y + DataCardValue5.Height
+                ZIndex: =3
+
+            StarVisible5 As label:
+                Align: =Align.Center
+                Height: =DataCardKey5.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5.Y
+                ZIndex: =4
+
+    FormGoleador As form:
+        DataSource: =Apuestas_1
+        DefaultMode: =FormMode.New
+        Height: =5
+        Item: =LookUp(Apuestas_1,'Tipo de Apuesta'.Nombre = "1" && Usuario.'Correo electrónico principal' = User().Email)
+        OnFailure: =Notify("No se ha podido guardar el goleador", NotificationType.Error, 1000)
+        OnSuccess: =Notify("Se ha guardado exitosamente", NotificationType.Success, 1000)
+        Visible: =false
+        Width: =640
+        Y: =216
+        ZIndex: =10
+
+        Jugador_DataCard1_1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_jugador"
+            Default: =ThisItem.Jugador
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_jugador")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue5_1.Selected
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardValue5_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DefaultSelectedItems: =GalGoleadores_4.Selected
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].Jugador)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].Jugador),DataCardValue5_1.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =60
+                Y: =162
+                ZIndex: =2
+
+        "'Tipo de Apuesta_DataCard2_1' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_tipoApuesta"
+            Default: =ThisItem.'Tipo de Apuesta'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_tipoApuesta")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue2_1.Selected
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardValue2_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =LookUp(TipoApuestas, Nombre = "1")
+                DefaultSelectedItems: =LookUp(TipoApuestas, Nombre = "1")
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].'Tipo de Apuesta')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].'Tipo de Apuesta'),DataCardValue2_1.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2_1.Y + DataCardKey2_1.Height + 5
+                ZIndex: =2
+
+        Equipo_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_equipo"
+            Default: =ThisItem.Equipo
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_equipo")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue2.Selected
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =GalGoleadores_4.Selected.Equipo
+                DefaultSelectedItems: =GalGoleadores_4.Selected.Equipo
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].Equipo)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].Equipo),DataCardValue2.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue2.Y + DataCardValue2.Height
+                ZIndex: =3
+
+            StarVisible2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey2.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey2.Y
+                ZIndex: =4
+
+        Seleccion_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="axx_seleccion"
+            Default: =ThisItem.Seleccion
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Apuestas_1],DataSourceInfo.DisplayName,"axx_seleccion")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue1.Selected
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =GalGoleadores_4.Selected.Equipo
+                DefaultSelectedItems: =GalGoleadores_4.Selected.Equipo
+                DisplayFields: =["axx_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Apuestas_1].Seleccion)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["axx_name"]
+                SearchItems: =Search(Choices([@Apuestas_1].Seleccion),DataCardValue1.SearchText,"axx_name")
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue1.Y + DataCardValue1.Height
+                ZIndex: =3
+
+            StarVisible1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey1.Y
+                ZIndex: =4
+

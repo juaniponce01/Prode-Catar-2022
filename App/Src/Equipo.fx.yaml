@@ -1,0 +1,333 @@
+"Equipo As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Fill: =RGBA(235, 236, 240, 1)
+
+    Canvas3 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Fill: =RGBA(235, 236, 240, 1)
+        Height: =1034
+        Width: =Parent.Width
+        Y: =101
+        ZIndex: =3
+
+        InfoBasica As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =750
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Image7 As image:
+                Height: =235
+                Image: =_paisSeleccionado.Bandera
+                ImagePosition: =ImagePosition.Stretch
+                RadiusBottomLeft: =200
+                RadiusBottomRight: =200
+                RadiusTopLeft: =200
+                RadiusTopRight: =200
+                Width: =238
+                X: =204
+                Y: =190
+                ZIndex: =2
+
+            Label1 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =69
+                Size: =25
+                Text: |
+                    =Upper(_paisSeleccionado.' País/Nombre')
+                Width: =366
+                X: =140
+                Y: =93
+                ZIndex: =3
+
+            Label3 As label:
+                FontWeight: =FontWeight.Lighter
+                Height: =54
+                Size: =20
+                Text: =_paisSeleccionado.'Última Participación'
+                Width: =224
+                X: =350
+                Y: =523
+                ZIndex: =4
+
+            Label3_1 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =54
+                Size: =20
+                Text: |-
+                    ="Última participación:"
+                Width: =312
+                X: =72
+                Y: =523
+                ZIndex: =8
+
+            Label3_2 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =54
+                Size: =20
+                Text: |-
+                    ="DT:"
+                Width: =296
+                X: =72
+                Y: =465
+                ZIndex: =9
+
+            Label3_3 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =54
+                Size: =20
+                Text: |-
+                    ="Resultado:"
+                Width: =158
+                X: =72
+                Y: =577
+                ZIndex: =10
+
+            Label3_5 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Lighter
+                Height: =38
+                Italic: =true
+                Size: =21
+                Text: =$"{Upper("Grupo")} { _paisSeleccionado.Grupo}"
+                Width: =130
+                X: =473
+                Y: =40
+                ZIndex: =12
+
+            Label3_6 As label:
+                FontWeight: =FontWeight.Lighter
+                Height: =54
+                Size: =20
+                Text: =_paisSeleccionado.Puesto
+                Width: =276
+                X: =217
+                Y: =577
+                ZIndex: =13
+
+            Container2_4 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(166, 166, 166, 1)
+                Height: =1
+                Width: =448
+                X: =99
+                Y: =648
+                ZIndex: =15
+
+            Label4 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                Size: =21
+                Text: ="JUGADORES"
+                Width: =560
+                X: =43
+                Y: =680
+                ZIndex: =16
+
+            Label6 As label:
+                Height: =68
+                Size: =20
+                Text: |
+                    =LookUp(Planteles, Equipo.' País/Nombre' = _paisSeleccionado.axx_name && 'Tipo de Integrante' = 'Tipo de Integrante Choice'.DT, Nombre) & " " & LookUp(Planteles, Equipo.' País/Nombre' = _paisSeleccionado.axx_name && 'Tipo de Integrante' = 'Tipo de Integrante Choice'.DT, Apellido)
+                Width: =365
+                X: =127
+                Y: =455
+                ZIndex: =17
+
+        Plantel As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =550
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            "PlantelPais As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver4.0'":
+                DelayItemLoading: =
+                Height: =CountRows(PlantelPais.AllItems)*PlantelPais.TemplateHeight + CountRows(PlantelPais.AllItems)*PlantelPais.TemplatePadding
+                Items: |+
+                    =Sort(Filter(Planteles, Equipo.' País/Nombre' = _paisSeleccionado.' País/Nombre'
+                    && 'Tipo de Integrante' = 'Tipo de Integrante Choice'.Jugador), Camiseta)
+                    
+                Layout: =Layout.Vertical
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =150
+                Y: =36
+                ZIndex: =1
+
+                Button4_1 As button:
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    DisabledFill: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =113
+                    OnSelect: =
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =50
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =50
+                    Size: =24
+                    Text: =""
+                    Width: =570
+                    X: =48
+                    Y: =15
+                    ZIndex: =1
+
+                Posicion As button:
+                    DisabledBorderColor: =RGBA(255, 145, 77, 1)
+                    DisabledColor: =If(ThisItem.Posicion = "DEL", RGBA(255, 145, 77, 1), If(ThisItem.Posicion = "MED", RGBA(126, 217, 87, 100), RGBA(0, 0, 0, 100)))
+                    DisabledFill: =RGBA(136, 160, 209, 1)
+                    DisplayMode: =DisplayMode.View
+                    Fill: =If(ThisItem.Posicion = "DEL", RGBA(255, 145, 77, 1), If(ThisItem.Posicion = "MED", RGBA(126, 217, 87, 100), If(ThisItem.Posicion = "DEF", RGBA(91,143,228,89), RGBA(242, 215, 61, 95))))
+                    Height: =113
+                    OnSelect: =
+                    RadiusBottomLeft: =70
+                    RadiusBottomRight: =70
+                    RadiusTopLeft: =70
+                    RadiusTopRight: =70
+                    Size: =24
+                    Text: =ThisItem.Posicion
+                    Width: =111
+                    X: =21
+                    Y: =15
+                    ZIndex: =2
+
+                Club As label:
+                    FontWeight: =FontWeight.Lighter
+                    Height: =Self.Size * 1.8
+                    Italic: =true
+                    OnSelect: =
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =16
+                    Text: =ThisItem.Club
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =284
+                    X: =145
+                    Y: =71
+                    ZIndex: =3
+
+                Altura As label:
+                    Height: =31
+                    OnSelect: =
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =16
+                    Text: =$"{ThisItem.Altura} cm"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =90
+                    X: =492
+                    Y: =36
+                    ZIndex: =4
+
+                PieHabil As label:
+                    FontWeight: =FontWeight.Normal
+                    Height: =Self.Size * 1.8
+                    OnSelect: =
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =16
+                    Text: =ThisItem.'Pierna Hábil'
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =90
+                    X: =492
+                    Y: =71
+                    ZIndex: =6
+
+                Nombre As label:
+                    Height: =Self.Size * 1.8
+                    OnSelect: =
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =18
+                    Text: =ThisItem.Nombre & " " & ThisItem.Apellido
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =222
+                    X: =145
+                    Y: =35
+                    ZIndex: =7
+
+    Image1_24 As image:
+        Height: =60
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Stretch
+        OnSelect: =Navigate(PerfilUsuario)
+        RadiusBottomLeft: =70
+        RadiusBottomRight: =70
+        RadiusTopLeft: =70
+        RadiusTopRight: =70
+        Width: =60
+        X: =84
+        Y: =20
+        ZIndex: =8
+
+    NavBar_20 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =8
+
+        Container1_18 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(235, 236, 240, 1)
+            Height: =100
+            Width: =640
+            ZIndex: =4
+
+        Icon1_23 As icon.Hamburger:
+            Color: =RGBA(30, 75, 239, 1)
+            Height: =70
+            Icon: =Icon.Hamburger
+            OnSelect: |-
+                =Navigate(Menu, ScreenTransition.Cover);
+                Set(NavScreen, Fixture)
+            Width: =50
+            X: =556
+            Y: =20
+            ZIndex: =5
+
+        Container2_19 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =1
+            Width: =640
+            Y: =100
+            ZIndex: =6
+
+        Icon_back_20 As icon.ChevronLeft:
+            Color: =RGBA(30, 75, 239, 1)
+            Height: =50
+            Icon: =Icon.ChevronLeft
+            OnSelect: =If(NavScreen = Home, Back(), Navigate(NavScreen))
+            Width: =50
+            X: =21
+            Y: =25
+            ZIndex: =7
+
+    Icon11_11 As icon.Home:
+        Color: =RGBA(30, 75, 239, 1)
+        Height: =60
+        Icon: =Icon.Home
+        OnSelect: =Navigate(Home)
+        Width: =60
+        X: =477
+        Y: =20
+        ZIndex: =9
+

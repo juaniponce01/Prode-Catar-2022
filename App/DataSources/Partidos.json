@@ -1,0 +1,148 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "axx_partidos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "axx_partido",
+    "MaxGetRowsCount": 2000,
+    "Name": "Partidos",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "axx_axx_apuesta_partido_axx_partido": "Apuestas",
+      "axx_axx_formacionpartido_Partido_axx_partido": "FormaciónPartidos",
+      "axx_axx_tipoapuesta_partido_axx_partido": "TipoApuestas",
+      "axx_detallepartido": "Detalle del Partido",
+      "axx_emisora": "Emisora",
+      "axx_equipoLocal": "Equipo Local",
+      "axx_equipoVisitante": "Equipo Visitante",
+      "axx_estadio": "Estadio",
+      "axx_fase": "Fase",
+      "axx_fechahora": "Fecha y hora",
+      "axx_idpartido": "Partido ",
+      "axx_idpartidoapi": "ID Partido API",
+      "axx_numeropartido": "Número de Partido",
+      "axx_partido_AsyncOperations": "Trabajos del sistema",
+      "axx_partido_BulkDeleteFailures": "Errores de eliminación en masa",
+      "axx_partido_DuplicateBaseRecord": "Registros duplicados (axx_partido_DuplicateBaseRecord)",
+      "axx_partido_DuplicateMatchingRecord": "Registros duplicados (axx_partido_DuplicateMatchingRecord)",
+      "axx_partido_MailboxTrackingFolders": "Carpetas de seguimiento automático del buzón",
+      "axx_partido_PrincipalObjectAttributeAccesses": "Uso compartido de campos",
+      "axx_partido_ProcessSession": "Sesiones de proceso",
+      "axx_partido_SyncErrors": "Errores de sincronización",
+      "axx_partidoid": "Partido GUID",
+      "axx_partidoporjugar": "Partido por Jugar",
+      "axx_partidosjugados": "Resultado",
+      "axx_posesionlocal": "Posesión Local",
+      "axx_posesionvisitante": "Posesión Visitante",
+      "axx_resultado90local": "Resultado 90 Local",
+      "axx_resultado90visitante": "Resultado 90 Visitante",
+      "axx_resultadoalarguelocal": "Resultado Alargue Local",
+      "axx_resultadoalarguevisitante": "Resultado Alargue Visitante",
+      "axx_resultadopenaleslocal": "Resultado Penales Local",
+      "axx_resultadopenalesvisitante": "Resultado Penales Visitante",
+      "axx_tirosefectivosarcol": "Tiros Efectivos al Arco Local",
+      "axx_tirosefectivosarcov": "Tiros Efectivos al Arco Visitante",
+      "createdby": "Autor",
+      "createdon": "Fecha de creación",
+      "createdonbehalfby": "Autor (delegado)",
+      "importsequencenumber": "Número de secuencia de importación",
+      "modifiedby": "Modificado por",
+      "modifiedon": "Fecha de modificación",
+      "modifiedonbehalfby": "Modificado por (delegado)",
+      "organizationid": "Id. de la organización",
+      "overriddencreatedon": "Fecha de creación del registro",
+      "statecode": "Estado",
+      "statuscode": "Detalles del estado",
+      "timezoneruleversionnumber": "Número de versión de regla de zona horaria",
+      "utcconversiontimezonecode": "Código de zona horaria de conversión UTC",
+      "versionnumber": "Número de versión"
+    },
+    "PreferredName": "Partidos",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Partidos (Views)",
+    "Name": "_axx_partido_views",
+    "RelatedEntityName": "Partidos",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0846ca77-d1fc-4015-a3d4-f55ebe810f51": "Vista de búsqueda avanzada de Partido",
+      "2ada80f0-dbfb-4de8-935b-87f8e235681c": "Vista de búsqueda de Partido",
+      "50f43971-c697-4db7-9706-bc19ef74ed00": "Vista asociada de Partido",
+      "64676724-f81f-ed11-b83d-000d3ac14d70": "Estadisticas del partido",
+      "7969bd5f-fb1f-ed11-b83d-000d3ac14d70": "Resultado",
+      "98ec9cb1-2d38-ed11-9db0-000d3ac19ac8": "Todos los partidos",
+      "9b7b4ab3-5138-ed11-9db0-000d3ac19ac8": "Partidos de Hoy",
+      "d86e8946-33ed-4a59-a9f7-f62d54912afe": "Partidos Jugados",
+      "de40f994-5f7b-4e5a-b832-2c814d113aaa": "Partidos inactivo",
+      "e485d9a1-f71f-ed11-b83d-000d3ac111f5": "Partidos por jugar"
+    }
+  },
+  {
+    "DisplayName": "Fase",
+    "Name": "axx_fase",
+    "OptionSetInfoNameMapping": {
+      "752810000": "Grupos",
+      "752810001": "Octavos",
+      "752810002": "Cuartos",
+      "752810003": "Semifinales",
+      "752810004": "Final",
+      "752810005": "Tercer Puesto"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "axx_fase",
+        "OptionSetReferenceEntityName": "Partidos"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "axx_fase",
+    "RelatedEntityName": "Partidos",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Estado (Partidos)",
+    "Name": "axx_partido_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Activo",
+      "1": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Partidos"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Partidos",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Detalles del estado (Partidos)",
+    "Name": "axx_partido_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Activo",
+      "2": "Inactivo",
+      "3": "Apuesta cerrada"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Partidos"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Partidos",
+    "Type": "OptionSetInfo"
+  }
+]

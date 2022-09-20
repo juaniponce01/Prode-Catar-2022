@@ -1,0 +1,168 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_account_forms",
+      "Namespace": "Cuentas (Forms)",
+      "Values": {
+        "Creación rápida de cuenta": "c9e7ec2d-efca-4e4c-b3e3-f63c4bba5e4b",
+        "Cuenta": "8448b78f-8f42-454e-8e2a-f8196b0419af",
+        "Cuenta para experiencia interactiva": "a72c7955-442b-4ea4-9499-b10cd18b4256",
+        "ficha de cuenta": "b028db32-3619-48a5-ac51-cf3f947b0ef3",
+        "Formulario de tarjeta de cuenta": "cccff382-2b92-467e-bf1b-3db179512af8",
+        "Formulario de ventana de jerarquía de cuenta": "69cff312-cfb6-4289-9631-249ab85d2c62",
+        "Información": "b053a39a-041a-4356-acef-ddf00182762b",
+        "Panel de referencia de la cuenta": "098ae145-1567-41ec-8398-86dbaac70c9b",
+        "Perfiles sociales": "2205c86d-ed88-4a2f-a447-3b86a8781f2e"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_equipo_forms",
+      "Namespace": "Equipos (Forms)",
+      "Values": {
+        "Información": "a7969599-1ce7-46fc-922b-aada624832a0"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_plantel_forms",
+      "Namespace": "Planteles (Forms)",
+      "Values": {
+        "Información": "9e3ec4e6-2dea-4bac-9fa3-fbf8b3f19750",
+        "QV Goles acumulados": "3c351ffb-c135-ed11-9db1-000d3ac1868a"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_partido_forms",
+      "Namespace": "Partidos (Forms)",
+      "Values": {
+        "Información": "92364b2a-2967-4d8f-87c5-c9fbbb5ac3f4"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_apuesta_forms",
+      "Namespace": "Apuestas_1 (Forms)",
+      "Values": {
+        "Información": "6ea420ba-a05f-4b8a-9e61-e6fd51e00496"
+      }
+    },
+    {
+      "Kind": "default.cds_systemuser_forms",
+      "Namespace": "Usuarios (Forms)",
+      "Values": {
+        "Formulario de usuario – Business": "c2413504-7eb2-4c59-a087-95d819866114",
+        "Formulario de ventana de jerarquía de usuario": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452",
+        "Información": "094fb08a-77bb-49e0-b7ea-8dbddfd01294",
+        "Usuario": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
+        "Usuario de la aplicación": "d26924ef-4d80-46f7-ab1d-e6ae80a54ce8",
+        "Usuario main form": "d3375fb2-eb22-ed11-9db1-000d3ac14d70"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_tipoapuesta_forms",
+      "Namespace": "TipoApuestas (Forms)",
+      "Values": {
+        "Información": "50346d10-03fc-4491-bee7-f2d893eebcb0"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_formacionpartido_forms",
+      "Namespace": "FormaciónPartidos (Forms)",
+      "Values": {
+        "Información": "5c8e27d4-5321-4d39-9933-6d1c48cc1996"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_perfilusuario_forms",
+      "Namespace": "PerfilUsuarios (Forms)",
+      "Values": {
+        "Información": "2d63d168-9e43-48a3-b6a3-c801196c9aee"
+      }
+    },
+    {
+      "Kind": "default.cds_mailboxtrackingfolder_forms",
+      "Namespace": "Carpetas de seguimiento automático del buzón (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_account_forms",
+      "Namespace": "Cuentas (Formularios)",
+      "Values": {
+        "Creación rápida de cuenta": "c9e7ec2d-efca-4e4c-b3e3-f63c4bba5e4b",
+        "Cuenta": "8448b78f-8f42-454e-8e2a-f8196b0419af",
+        "Cuenta para experiencia interactiva": "a72c7955-442b-4ea4-9499-b10cd18b4256",
+        "ficha de cuenta": "b028db32-3619-48a5-ac51-cf3f947b0ef3",
+        "Formulario de tarjeta de cuenta": "cccff382-2b92-467e-bf1b-3db179512af8",
+        "Formulario de ventana de jerarquía de cuenta": "69cff312-cfb6-4289-9631-249ab85d2c62",
+        "Información": "b053a39a-041a-4356-acef-ddf00182762b",
+        "Panel de referencia de la cuenta": "098ae145-1567-41ec-8398-86dbaac70c9b",
+        "Perfiles sociales": "2205c86d-ed88-4a2f-a447-3b86a8781f2e"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_equipo_forms",
+      "Namespace": "Equipos (Formularios)",
+      "Values": {
+        "Información": "a7969599-1ce7-46fc-922b-aada624832a0"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_plantel_forms",
+      "Namespace": "Planteles (Formularios)",
+      "Values": {
+        "Información": "9e3ec4e6-2dea-4bac-9fa3-fbf8b3f19750"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_partido_forms",
+      "Namespace": "Partidos (Formularios)",
+      "Values": {
+        "Información": "92364b2a-2967-4d8f-87c5-c9fbbb5ac3f4"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_apuesta_forms",
+      "Namespace": "Apuestas_1 (Formularios)",
+      "Values": {
+        "Información": "6ea420ba-a05f-4b8a-9e61-e6fd51e00496"
+      }
+    },
+    {
+      "Kind": "default.cds_systemuser_forms",
+      "Namespace": "Usuarios (Formularios)",
+      "Values": {
+        "Formulario de usuario – Business": "c2413504-7eb2-4c59-a087-95d819866114",
+        "Formulario de ventana de jerarquía de usuario": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452",
+        "Información": "094fb08a-77bb-49e0-b7ea-8dbddfd01294",
+        "Usuario": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
+        "Usuario de la aplicación": "d26924ef-4d80-46f7-ab1d-e6ae80a54ce8",
+        "Usuario main form": "d3375fb2-eb22-ed11-9db1-000d3ac14d70"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_tipoapuesta_forms",
+      "Namespace": "TipoApuestas (Formularios)",
+      "Values": {
+        "Información": "50346d10-03fc-4491-bee7-f2d893eebcb0"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_formacionpartido_forms",
+      "Namespace": "FormaciónPartidos (Formularios)",
+      "Values": {
+        "FormaciónPartido quick view form": "45c8a2b0-3334-ed11-9db1-000d3ac1868a",
+        "Información": "5c8e27d4-5321-4d39-9933-6d1c48cc1996"
+      }
+    },
+    {
+      "Kind": "default.cds_axx_perfilusuario_forms",
+      "Namespace": "PerfilUsuarios (Formularios)",
+      "Values": {
+        "Información": "2d63d168-9e43-48a3-b6a3-c801196c9aee"
+      }
+    },
+    {
+      "Kind": "default.cds_mailboxtrackingfolder_forms",
+      "Namespace": "Carpetas de seguimiento automático del buzón (Formularios)",
+      "Values": {}
+    }
+  ]
+}

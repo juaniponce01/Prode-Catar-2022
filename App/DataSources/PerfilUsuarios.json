@@ -1,0 +1,144 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "axx_perfilusuarios",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "axx_perfilusuario",
+    "MaxGetRowsCount": 2000,
+    "Name": "PerfilUsuarios",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Propietario",
+      "axx_equipo_axx_perfilUsuario_axx_perfilUs": "Equipos Prode (axx_equipo_axx_perfilUsuario_axx_perfilUs)",
+      "axx_finalizacionpartido": "Finalización del Partido",
+      "axx_idperfil": "ID Perfil",
+      "axx_name": "Nombre de Perfil",
+      "axx_perfilusuario_AsyncOperations": "Trabajos del sistema",
+      "axx_perfilUsuario_axx_equipo_axx_equipo": "Equipos Prode (axx_perfilUsuario_axx_equipo_axx_equipo)",
+      "axx_perfilusuario_BulkDeleteFailures": "Errores de eliminación en masa",
+      "axx_perfilusuario_DuplicateBaseRecord": "Registros duplicados (axx_perfilusuario_DuplicateBaseRecord)",
+      "axx_perfilusuario_DuplicateMatchingRecord": "Registros duplicados (axx_perfilusuario_DuplicateMatchingRecord)",
+      "axx_perfilusuario_MailboxTrackingFolders": "Carpetas de seguimiento automático del buzón",
+      "axx_perfilusuario_PrincipalObjectAttributeAccesses": "Uso compartido de campos",
+      "axx_perfilusuario_ProcessSession": "Sesiones de proceso",
+      "axx_perfilusuario_SyncErrors": "Errores de sincronización",
+      "axx_perfilusuarioid": "Perfil Usuario",
+      "axx_recibirnotificaciones": "Recibir Notificaciones ",
+      "axx_selecciones": "Selecciones",
+      "axx_usuario": "Usuario ",
+      "createdby": "Autor",
+      "createdon": "Fecha de creación",
+      "createdonbehalfby": "Autor (delegado)",
+      "importsequencenumber": "Número de secuencia de importación",
+      "modifiedby": "Modificado por",
+      "modifiedon": "Fecha de modificación",
+      "modifiedonbehalfby": "Modificado por (delegado)",
+      "overriddencreatedon": "Fecha de creación del registro",
+      "owningbusinessunit": "Unidad de negocio propietaria",
+      "owningteam": "Equipo propietario",
+      "owninguser": "Usuario propietario",
+      "statecode": "Estado",
+      "statuscode": "Razón para el estado",
+      "timezoneruleversionnumber": "Número de versión de regla de zona horaria",
+      "utcconversiontimezonecode": "Código de zona horaria de conversión UTC",
+      "versionnumber": "Número de versión"
+    },
+    "PreferredName": "PerfilUsuarios",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "PerfilUsuarios (Views)",
+    "Name": "_axx_perfilusuario_views",
+    "RelatedEntityName": "PerfilUsuarios",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1a1d064c-e1a8-4f1f-9914-48445342bc8f": "Vista de búsqueda avanzada de PerfilUsuario",
+      "27ba6a53-8e50-4acc-83b6-ecb53a614f06": "Vista asociada de PerfilUsuario",
+      "8c52330e-ce7e-4e80-b266-1440f17d2fa8": "PerfilUsuarios activo",
+      "a271a631-b18e-4335-9a3e-2ae12653baf7": "PerfilUsuarios inactivo",
+      "b6bf8296-5b6b-468b-bb04-2c01896c3070": "Vista de búsqueda de PerfilUsuario"
+    }
+  },
+  {
+    "DisplayName": "Finalización del Partido (PerfilUsuarios)",
+    "Name": "axx_perfilusuario_axx_finalizacionpartido",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "axx_finalizacionpartido",
+        "OptionSetReferenceEntityName": "PerfilUsuarios"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "axx_finalizacionpartido",
+    "RelatedEntityName": "PerfilUsuarios",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Recibir Notificaciones  (PerfilUsuarios)",
+    "Name": "axx_perfilusuario_axx_recibirnotificaciones",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "axx_recibirnotificaciones",
+        "OptionSetReferenceEntityName": "PerfilUsuarios"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "axx_recibirnotificaciones",
+    "RelatedEntityName": "PerfilUsuarios",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Estado (PerfilUsuarios)",
+    "Name": "axx_perfilusuario_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Activo",
+      "1": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "PerfilUsuarios"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "PerfilUsuarios",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Razón para el estado (PerfilUsuarios)",
+    "Name": "axx_perfilusuario_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Activo",
+      "2": "Inactivo"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "PerfilUsuarios"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "PerfilUsuarios",
+    "Type": "OptionSetInfo"
+  }
+]

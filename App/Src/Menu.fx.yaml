@@ -1,0 +1,115 @@
+Menu As screen:
+    Fill: =RGBA(235, 236, 240, 1)
+    OnVisible: =
+
+    Image2 As image:
+        Height: =1136
+        Image: ='menu-navigation'
+        Width: =640
+        ZIndex: =1
+
+    BotonHome As button:
+        Align: =Align.Left
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =70
+        HoverColor: =RGBA(84, 84, 84, 1)
+        HoverFill: =RGBA(255, 255, 255, 0.35)
+        OnSelect: =Navigate(Home, ScreenTransition.Fade)
+        PressedColor: =RGBA(84, 84, 84, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =24
+        Text: =" Home"
+        Width: =271
+        X: =62
+        Y: =131
+        ZIndex: =2
+
+    BotonApuestas As button:
+        Align: =Align.Left
+        Color: =RGBA(116, 116, 116, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =70
+        HoverColor: =RGBA(84, 84, 84, 1)
+        HoverFill: =RGBA(255, 255, 255, 0.35)
+        OnSelect: =Navigate(MisApuestas, ScreenTransition.Fade)
+        PressedColor: =RGBA(84, 84, 84, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =24
+        Text: =" Mis apuestas"
+        Width: =271
+        X: =62
+        Y: =301
+        ZIndex: =3
+
+    BotonEquipos As button:
+        Align: =Align.Left
+        Color: =RGBA(116, 116, 116, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =70
+        HoverColor: =RGBA(84, 84, 84, 1)
+        HoverFill: =RGBA(255, 255, 255, 0.35)
+        OnSelect: =Navigate(ListaEquipos, ScreenTransition.Fade)
+        PressedColor: =RGBA(84, 84, 84, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =24
+        Text: ="Lista de equipos"
+        Width: =271
+        X: =62
+        Y: =385
+        ZIndex: =4
+
+    BotonFixture As button:
+        Align: =Align.Left
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =70
+        HoverColor: =RGBA(84, 84, 84, 1)
+        HoverFill: =RGBA(255, 255, 255, 0.35)
+        OnSelect: =Navigate(Fixture, ScreenTransition.Fade)
+        PressedColor: =RGBA(84, 84, 84, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =24
+        Text: ="Fixture"
+        Width: =271
+        X: =62
+        Y: =216
+        ZIndex: =5
+
+    Icon2 As icon.CancelBadge:
+        Color: =RGBA(116, 116, 116, 1)
+        Height: =50
+        Icon: =Icon.CancelBadge
+        OnSelect: =Back(ScreenTransition.UnCoverRight)
+        Width: =50
+        X: =560
+        Y: =35
+        ZIndex: =6
+
+    UploadedImage1 As image:
+        Height: =AddMediaButton1.Height
+        Image: =If(IsBlank(AddMediaButton1.Media), SampleImage, AddMediaButton1.Media)
+        ImagePosition: =ImagePosition.Fill
+        Width: =AddMediaButton1.Width
+        X: =AddMediaButton1.X
+        Y: =AddMediaButton1.Y
+        ZIndex: =7
+

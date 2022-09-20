@@ -1,0 +1,11 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =Set(_grupoFiltrado, "A");
+        Set(GoleadorApostado, LookUp(Apuestas_1, 'Tipo de Apuesta'.'ID TipoApuesta' = "1" && Usuario.'Correo electrónico principal' = User().Email, Jugador));
+        Set(AsistidorApostado, LookUp(Apuestas_1, 'Tipo de Apuesta'.'ID TipoApuesta' = "9" && Usuario.'Correo electrónico principal' = User().Email, Jugador));
+        Set(ArqueroApostado, LookUp(Apuestas_1, 'Tipo de Apuesta'.'ID TipoApuesta' = "5" && Usuario.'Correo electrónico principal' = User().Email, Jugador));
+        Set(Campeon, LookUp(Apuestas_1, 'Tipo de Apuesta'.'ID TipoApuesta' = "7" && Usuario.'Correo electrónico principal' = User().Email, Jugador));
+        Set(SubCampeon, LookUp(Apuestas_1, 'Tipo de Apuesta'.'ID TipoApuesta' = "8" && Usuario.'Correo electrónico principal' = User().Email, Jugador));
+        Set(TercerPuesto, LookUp(Apuestas_1, 'Tipo de Apuesta'.'ID TipoApuesta' = "6" && Usuario.'Correo electrónico principal' = User().Email, Jugador));
+
